@@ -42,6 +42,22 @@ User.init(
         len: [8],
       },
     },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    country: {
+      dataType: DataTypes.STRING,
+      allowNull: false,
+    },
+    zipCode: {
+      dataType: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     hooks: {
@@ -57,7 +73,6 @@ User.init(
         return updatedUserData;
       },
     },
-
     sequelize,
     timestamp: false,
     freezeTableName: true,
