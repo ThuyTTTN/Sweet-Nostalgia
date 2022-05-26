@@ -28,5 +28,7 @@ const sequelize = require('../config/connection');
 //  GET home page
 router.get('/', (req, res) => { // anyone can access this page
     //  home.handlebars file
-    res.render('home');
-})
+    res.render('homepage');
+});
+
+module.exports = router;
