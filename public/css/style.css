@@ -13,10 +13,23 @@ root {
     box-sizing: border-box;
 }
 
+a   {
+    text-decoration: none;
+    color: rgb(21, 21, 21);
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgb(237, 13, 13);
+}
+
+
+li {
+    list-style: none;
+}
+
 
 .hero {
-    width: 100vw;
-    height: 50vh;
     background-color: salmon;
     margin-bottom: 25%;
 }
@@ -26,27 +39,17 @@ root {
     height: 60%;
     border-radius: 8%;
 }
-/* 
-.btn {
-    width: 50%;
-
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: 0.5s;
-} */
 
 .content-image {
     margin: 10px;
     width: 60%;
     height: 20%;
+    border-radius: 8%;
 }
 
 .theme-image {
-    width: 75%;
-    height: 50%;
+    width: 50%;
+    height: 60%;
     border-radius: 8%;
 }
 
