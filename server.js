@@ -3,6 +3,7 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize  = require('./config/connection');
 const exphbs = require('express-handlebars');
+const path = require('path');
 
 
 const PORT = process.env.PORT || 3001;
@@ -17,6 +18,15 @@ app.engine('handlebars', hbs.engine);
 // set handlebars as the default engine
 app.set('view engine', 'handlebars');
 // set up routes and controllers
+
+// use express.json to parse json
+app.use(express.json());
+// use express.urlencoded to parse urlencoded
+app.use(express.urlencoded({ extended: true }));
+// serve static files from public folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 app.use(routes);
 
 
