@@ -1,3 +1,4 @@
+// modules to require
 const User = require('./User');
 const Candy = require('./Candy');
 
