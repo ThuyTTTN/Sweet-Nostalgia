@@ -7,7 +7,11 @@ const seedAll = async () => {
     await sequelize.sync({ force: true });
     console.log('\n----- DATABASE SYNCED -----\n')
 
+    await seedCandy();
+    console.log('\n----- CANDIES SEEDED -----\n')
+
     process.exit(0);
 }
+
 //run seedAll function
 seedAll();

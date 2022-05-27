@@ -17,15 +17,15 @@ Candy.init(
     category_decade: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
   },
   {
     sequelize,
-    timestamp: false,
+    // timestamp: false,
     freezeTableName: true,
     underscore: true,
     modelName: "candy",
   }
 );
 
-model.exports = Candy;
+module.exports = Candy;
