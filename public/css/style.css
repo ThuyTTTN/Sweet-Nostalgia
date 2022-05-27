@@ -3,9 +3,9 @@ root {
     margin: 0;
 }
 
-/* body {
+body {
     background-color: #1f206c;
-} */
+}
 
 * {
     margin: 0;
@@ -15,14 +15,14 @@ root {
 
 a   {
     text-decoration: none;
-    color: rgb(21, 21, 21);
+    color: salmon;
 }
+
 
 a:hover {
     text-decoration: none;
     color: rgb(237, 13, 13);
 }
-
 
 li {
     list-style: none;
@@ -58,3 +58,19 @@ li {
     margin-bottom: 10%;
 }
 
+
+.fa {
+    color: #78bbeb;
+}
+
+.fa:hover {
+    color: rgb(237, 13, 13);
+}
+
+h6 {
+    color: #78bbeb;
+}
+
+.footer-bottom {
+    color: #78bbeb;
+}
