@@ -3,9 +3,9 @@ root {
     margin: 0;
 }
 
-body {
+/* body {
     background-color: #1f206c;
-}
+} */
 
 * {
     margin: 0;
@@ -52,4 +52,5 @@ body {
 
 .theme-container {
     margin-top: 25%;
+    margin-bottom: 10%;
 }
