@@ -1,8 +1,9 @@
 const User = require('./User');
+const Candy = require('./Candy');
 
 
 //create associations
 
 
 
-module.exports = { User };
+module.exports = { User, Candy };
