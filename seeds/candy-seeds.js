@@ -1,8 +1,11 @@
+// Modules required
 const  Candy  = require('../models/Candy');
 
+// variable to hold all the candy data
 const candyData = [
-    // expects key value pairs candy_decade 
+    // expects key value pairs (candy_decade)
     {
+        // the decade of candy
         category_decade: '70s',
     },
     {
@@ -11,10 +14,10 @@ const candyData = [
     {
         category_decade: '90s',
     }
-    // add wild card 
+    // TODO: add wild card 
 ];
 
-// function to seed the users table with the data in the userData array
+///variable to hold all the candy for each user  in the candyData array
 const seedCandy = () => Candy.bulkCreate(candyData);
 
 module.exports = seedCandy;
