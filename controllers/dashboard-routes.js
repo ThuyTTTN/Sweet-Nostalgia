@@ -2,7 +2,6 @@
 const router = require('express').Router();
 const { User, Candy } = require('../models');
 // const withAuth = require('../utils/auth');
-const sequelize = require('../config/connection');
 
 //  GET /dashboard - to show user's subscription and information
 router.get('/', (req, res) => {
@@ -20,6 +19,37 @@ router.get('/', (req, res) => {
                 attributes: ['id', 'category_decade']
                 /* CoPilot suggested for candy a 'price', 'decade_id' column maybe we need */
          }]
-    })
+    // }).then(dbUserData => { // this is anticipated promise
+    //     const user = dbUserData[0];
+    //     const candy = user.Candy;
+    //     const userData = user.get({ plain: true });
+    //     console.log(userData);
+    //     console.log(candy);
+    //     res.render('dashboard', {
+    //         user: userData,
+    //         candy: candy
+    //     });
+    }).catch (err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
-})
+router.get('/edit/:id', (req, res) => {
+    User.findOne({
+        where: {
+            id: req.params.id
+        } 
+    // }).then(dbUserData => { 
+    //     const user = dbUserData.get({ plain: true });
+    //     res.render('edit-user', {
+    //         user: user
+    //     })
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+module.exports = router;
+
