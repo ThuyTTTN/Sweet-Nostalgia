@@ -57,7 +57,7 @@ User.init(
     zipCode: {
       dataType: DataTypes.STRING,
       allowNull: false,
-    }
+    },
   },
   {
     hooks: {
@@ -81,4 +81,4 @@ User.init(
   }
 );
 
-model.exports = User;
+module.exports = User;
