@@ -16,6 +16,8 @@ const hbs = exphbs.create();
 app.engine('handlebars', hbs.engine);
 // set handlebars as the default engine
 app.set('view engine', 'handlebars');
+// testing
+app.use(express.static("public"));
 // set up routes and controllers
 app.use(routes);
 
