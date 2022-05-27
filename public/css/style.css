@@ -4,9 +4,30 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+.hero {
+    width: 100vw;
+    height: 50vh;
+    background-color: salmon;
+}
+
+.hero-image {
+    width: 40%;
+    height: 20%;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* image rounded */
+    border-radius: 8%;
+}
+
+.btn {
+    width: 50%;
+    /* align center */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.5s;
 }
