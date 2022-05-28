@@ -80,7 +80,7 @@ User.init({
     allowNull: false,
   },
   // defines the country column
-  country: {
+  state: {
     // defines type of data in the column
     dataType: DataTypes.STRING,
     // does not allow value to be empty
@@ -102,13 +102,6 @@ User.init({
       newUserData.pasword = await bcrypt.hash(newUserData.password, 10);
       // using the bcrypt module to hash the password and store it in the password column
       return newUserData;
-    },
-    // beforeUpdate is a hook that runs before the update method is run
-    async beforeUpdate(updatedUserData) {
-      // if the password column is being updated we are hashing the password
-      updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-      // using the bcrypt module to hash the password and store it in the password column
-      return updatedUserData;
     },
   },
   // adding our database connection to our model... this is ES6 shorthand for sequelize: sequelize 
