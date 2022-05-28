@@ -5,9 +5,9 @@ const Candy = require('./Candy');
 
 //create associations
 /* --- to be used later possibly --- */
-// User.hasMany(Candy, {
-//     foreignKey: 'user_id',
-// });
+User.hasMany(Candy, {
+    foreignKey: 'user_id',
+});
     
 
 Candy.hasMany(User, {
