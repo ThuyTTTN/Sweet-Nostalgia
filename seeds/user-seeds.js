@@ -53,6 +53,16 @@ const userData = [
     state: "Florida",
     zipcode: "32803",
   },
+  {
+    first_name: "Gob",
+    last_name: "Stopper",
+    email: "Gob@example.com",
+    password: "password123",
+    address: "1234 Globbers Road",
+    city: "Orlando",
+    state: "Florida",
+    zipcode: "32806",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);
