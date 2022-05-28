@@ -11,7 +11,7 @@ const userData = [
     address: "1445 West Norwood Avenue",
     city: "Itasca",
     state: "Illinois",
-    zipcode: "60143",
+    zipCode: "60143",
   },
   {
     first_name: "Jolly",
@@ -21,7 +21,7 @@ const userData = [
     address: "123 Ranchers Road",
     city: "Orlando",
     state: "Florida",
-    zipcode: "32836",
+    zipCode: "32836",
   },
   {
     first_name: "Pixy",
@@ -31,7 +31,7 @@ const userData = [
     address: "456 Stix Road",
     city: "Orlando",
     state: "Florida",
-    zipcode: "32801",
+    zipCode: "32801",
   },
   {
     first_name: "Mister",
@@ -41,7 +41,7 @@ const userData = [
     address: "789 Chocolate Road",
     city: "Orlando",
     state: "Florida",
-    zipcode: "32828",
+    zipCode: "32828",
   },
   {
     first_name: "Hans",
@@ -51,7 +51,7 @@ const userData = [
     address: "1234 Gummy Road",
     city: "Orlando",
     state: "Florida",
-    zipcode: "32803",
+    zipCode: "32803",
   },
   {
     first_name: "Gob",
@@ -61,10 +61,10 @@ const userData = [
     address: "1234 Globbers Road",
     city: "Orlando",
     state: "Florida",
-    zipcode: "32806",
+    zipCode: "32806",
   },
 ];
 
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});
 
 module.exports = seedUsers;
