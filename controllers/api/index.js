@@ -1,6 +1,5 @@
-// file connects to controllers/index.js
+// Modules to require
 const router = require('express').Router();
-
 const userRoutes = require('./user-routes.js');
 const candyRoutes = require('./candy-routes.js');
 
