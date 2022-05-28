@@ -19,33 +19,44 @@ router.get('/', (req, res) => {
                 attributes: ['id', 'category_decade']
                 /* CoPilot suggested for candy a 'price', 'decade_id' column maybe we need */
          }]
-    // }).then(dbUserData => { // this is anticipated promise
-    //     const user = dbUserData[0];
-    //     const candy = user.Candy;
-    //     const userData = user.get({ plain: true });
-    //     console.log(userData);
-    //     console.log(candy);
-    //     res.render('dashboard', {
-    //         user: userData,
-    //         candy: candy
-    //     });
-    }).catch (err => {
+    })
+    // send the response back to the client
+    .then(dbUserData => { // this is anticipated promise
+        const user = dbUserData[0];
+        const candy = user.Candy;
+        const userData = user.get({ plain: true });
+        console.log(userData);
+        console.log(candy);
+        res.render('dashboard', {
+            user: userData,
+            candy: candy
+        });
+    })
+    // catch any errors
+    .catch (err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
 
 router.get('/edit/:id', (req, res) => {
+    // access the candel model to find a single candy
     User.findOne({
+        // find the candy for the user by id
         where: {
+            // the id is in the user
             id: req.params.id
         } 
-    // }).then(dbUserData => { 
-    //     const user = dbUserData.get({ plain: true });
-    //     res.render('edit-user', {
-    //         user: user
-    //     })
-    }).catch(err => {
+    })
+    // send the response back to the client
+    .then(dbUserData => { 
+        const user = dbUserData.get({ plain: true });
+        res.render('edit-user', {
+            user: user
+        })
+    })
+    // catch any errors
+    .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
