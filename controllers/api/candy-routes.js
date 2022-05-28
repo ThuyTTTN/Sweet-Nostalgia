@@ -1,7 +1,7 @@
 // file connects to api/index.js
 const router = require('express').Router();
 const { Candy, User } = require('../../models');
-const withAuth = require('../../utils/auth');  //do we need this?
+const withAuth = require('../../utils/auth'); 
 
 
 // GET request
@@ -9,10 +9,8 @@ router.get('/', (req, res) => {
     Candy.findAll({ 
         attributes: [
             'id',
-            'category_decade',
-            'created_at' //do we need this?
+            'category_decade'
         ],
-        order: [['created_at', 'DESC']],  //do we need this?
         include: [
             {
                 model: User,
@@ -55,24 +53,23 @@ router.get('/:id', (req, res) => {
 });
 
 
-// POST reqeust
-router.post('/', withAuth, (req, res) => {
-    Candy.create({
-        category_decade: req.body.category_decade,
-        created_at: req.body.created_at
-    })
-    .then(dbUserData => {
-        res.json(dbUserData)})
-    .catch(err => res.status(500).json(err));
-});
+// // POST reqeust
+// router.post('/', withAuth, (req, res) => {
+//     Candy.create({
+//         category_decade: req.body.category_decade,
+//         created_at: req.body.created_at
+//     })
+//     .then(dbUserData => {
+//         res.json(dbUserData)})
+//     .catch(err => res.status(500).json(err));
+// });
 
 
 // PUT request
 router.put('/:id', withAuth, (req, res) => {
     Candy.update(
         {
-            category_decade: req.body.category_decade,
-            created_at: req.body.created_at
+            category_decade: req.body.category_decade
         },
         {
             where: {

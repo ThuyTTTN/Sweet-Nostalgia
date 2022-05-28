@@ -50,7 +50,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    country: {
+    state: {
       dataType: DataTypes.STRING,
       allowNull: false,
     },
