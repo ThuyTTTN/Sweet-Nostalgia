@@ -1,25 +1,30 @@
-// file connects to api/index.js
+// Modules to require
 const router = require('express').Router();
 const { Candy, User } = require('../../models');
 const withAuth = require('../../utils/auth'); 
 
 
-// GET request
+// GET request to find all candies
 router.get('/', (req, res) => {
+    // access the Candy model and find all candies
     Candy.findAll({ 
-        attributes: [
-            'id',
-            'category_decade'
-        ],
+        // include the user that subscribed to the candy
         include: [
             {
+                // the model is the table we want to include
                 model: User,
+                // the atribbutes are the columns we want to return for the user that subscribed to the candy
                 attributes: ['id', 'email', 'password']
             }
         ]
     })
+    // send the response back to the client
     .then(dbCandyData => res.json(dbCandyData)) 
-    .catch(err => res.status(500).json(err));
+    // catch any errors
+    .catch (err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
 
 
