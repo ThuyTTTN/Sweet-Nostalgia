@@ -73,12 +73,49 @@ router.post('/', (req, res) => {
 
 
 // LOGIN USER /api/users/login HERE...
+router.post('/login',(req,res)=>{
+    User.findOne({
+        where:{
+          email: req.body.email
+        }
+    })
+    .then(dbLoginData =>{
+        if(!dbLoginData || !dbLoginData.password){
+            res.status(404).json({message: 'Login Failed'});
+            return;
+        }
+        
+        const correctPass = User.checkPassword(req.body.password);
+
+        if(!correctPass){
+            res.status(400).json({message: 'Invalid Password'});
+            return;
+        }
+        req.session.save(()=>{
+            req.session.email = User.email,
+            res.session.loggedIn = true;
+            res.json({User, message:'You are now logged in!'})
+        });
+    }).catch(err =>{
+        console.log(err);
+        res.status(500).json(err)
+    });
+
+});
 
 
 
 
 // LOGOUT USER /api/users/logout HERE...
-
+router.post('/logout',(req,res)=>{
+    if(req.session.loggedIn){
+        req.session.destroy(()=>{
+            res.status(204).end();
+        });
+    }else{
+        res.status(404).end();
+    }
+})
 
 
 
