@@ -1,7 +1,7 @@
 // Modules
 const router = require('express').Router();
 const { User, Candy } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 //  GET /dashboard - to show user's subscription and information
 router.get('/', (req, res) => {
