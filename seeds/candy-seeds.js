@@ -7,9 +7,12 @@ const candyData = [
     {
         // the decade of candy
         category_decade: '70s',
+        // the user id of the user that subscribed to the candy
+   
     },
     {
         category_decade: '80s',
+ 
     },
 ];
 
