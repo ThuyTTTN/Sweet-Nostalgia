@@ -1,33 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="signup-hero p-3">
+            <h1>Craving something sweet. Give your sweet tooth exactly what it needs</h1>
+            <div class="signup-form">
 
-    <div class="container">
-        <div class="row">
-            <div class="signup-hero p-3">
-                <h1>Craving something sweet. Give your sweet tooth exactly what it needs</h1>
-                <div class="signup-form">
-                    <form class="row g-3 requires-validation" novalidate>
-                        <div class="col-md-12">
-                            <label for="first-input-signup" class="form-label">First Name:</label>
-                            <input type="name" class="form-control" id="first-input-signup" required>
-                            <div class="valid-feedback">
-                                First Name looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                First Name is required!
-                            </div>
+                <form class="row g-3 requires-validation" novalidate>
+                    <div class="col-md-12">
+                        <label for="first-input-signup" class="form-label">First Name:</label>
+                        <input type="name" class="form-control" id="first-input-signup" required>
+                        <div class="valid-feedback">
+                            First Name looks good!
                         </div>
-                        <div class="col-md-12">
-                            <label for="last-input-signup" class="form-label">Last Name:</label>
-                            <input type="name" class="form-control" id="last-input-signup" required>
-                            <div class="valid-feedback">
-                                Last Name looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Last Name is required!
-                            </div>
+                        <div class="invalid-feedback">
+                            First Name is required!
                         </div>
-                        <div class="col-md-12">
-                            <label for="email-input-signup" class="form-label">Email:</label>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="last-input-signup" class="form-label">Last Name:</label>
+                        <input type="name" class="form-control" id="last-input-signup" required>
+                        <div class="valid-feedback">
+                            Last Name looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Last Name is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="email-input-signup" class="form-label">Email:</label>
+                        <div class="input-group">
                             <input type="email" class="form-control" id="email-input-signup" required>
+                            <span class="input-group-text" id="basic-addon2">@gmail.com</span>
                             <div class="valid-feedback">
                                 Email looks good!
                             </div>
@@ -35,79 +39,87 @@
                                 Email is required!
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <label for="password-input-signup" class="form-label">Password:</label>
-                            <input type="password" class="form-control" id="password-input-signup" required>
-                            <div class="valid-feedback">
-                                Password looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Password is required!
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="password-input-signup" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="password-input-signup" required>
+                        <div id="passwordHelpBlock" class="form-text">
+                            Your password must be 8-20 characters long, contain letters, numbers, special characters and
+                            must not
+                            contain spaces or emoji's.
                         </div>
+                        <div class="valid-feedback">
+                            Password looks good!
                         </div>
-                        <div class="col-12">
-                            <button class="btn btn-danger" type="submit">Get Sweets Today</button>
+                        <div class="invalid-feedback">
+                            Password is required!
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    
+                    <div class="col-12">
+                        <button class="btn btn-danger" type="submit">Get Sweets Today</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
 
-    {{!-- <div class="card">
+{{!-- <div class="card">
 
-        <h2 class="card-header">SIGN UP</h2>
+    <h2 class="card-header">SIGN UP</h2>
 
-        <form class="card-body signup-form">
+    <form class="card-body signup-form">
 
-            <div class="form-group">
-                <label for="form-label">First Name:</label>
-                <input type="text" class="form-input" id="first-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">First Name:</label>
+            <input type="text" class="form-input" id="first-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">Last Name:</label>
-                <input type="text" class="form-input" id="last-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">Last Name:</label>
+            <input type="text" class="form-input" id="last-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">Email:</label>
-                <input type="text" class="form-input" id="email-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">Email:</label>
+            <input type="text" class="form-input" id="email-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">Password:</label>
-                <input type="password" class="form-input" id="password-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">Password:</label>
+            <input type="password" class="form-input" id="password-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">Address:</label>
-                <input type="text" class="form-input" id="address-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">Address:</label>
+            <input type="text" class="form-input" id="address-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">City:</label>
-                <input type="text" class="form-input" id="city-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">City:</label>
+            <input type="text" class="form-input" id="city-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">State:</label>
-                <input type="text" class="form-input" id="state-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">State:</label>
+            <input type="text" class="form-input" id="state-input-signup">
+        </div>
 
-            <div class="form-group">
-                <label for="form-label">Zip Code:</label>
-                <input type="text" class="form-input" id="zip-input-signup">
-            </div>
+        <div class="form-group">
+            <label for="form-label">Zip Code:</label>
+            <input type="text" class="form-input" id="zip-input-signup">
+        </div>
 
-            <div class="form-group">
-                <button class="btn btn-primary" type="submit">SIGN UP!</button>
-                <button class="btn btn-danger" type="submit"><a href="/login">LOGIN</a>L</button>
-            </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">SIGN UP!</button>
+            <button class="btn btn-danger" type="submit"><a href="/login">LOGIN</a>L</button>
+        </div>
 
-        </form> --}}
+    </form> --}}
 
-    </div>
-    <script src="/js/signup.js"></script>
-    <script src="/js/signup-validate.js"></script>
+</div>
+<script src="/js/signup.js"></script>
+<script src="/js/signup-validate.js"></script>
