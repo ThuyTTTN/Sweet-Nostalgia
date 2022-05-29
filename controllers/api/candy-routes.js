@@ -7,15 +7,15 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     // access the Candy model and find all candies
     Candy.findAll({ 
-        // // include the user that subscribed to the candy
-        // include: [
-        //     {
-        //         // the model is the table we want to include
-        //         model: User,
-        //         // the atribbutes are the columns we want to return for the user that subscribed to the candy
-        //         attributes: ['id', 'email', 'password']
-        //     }
-        // ]
+        // include the user that subscribed to the candy
+        include: [
+            {
+                // the model is the table we want to include
+                model: User,
+                // the atribbutes are the columns we want to return for the user that subscribed to the candy
+                attributes: ['id', 'email', 'password']
+            }
+        ]
     })
     // send the response back to the client
     .then(dbCandyData => res.json(dbCandyData)) 

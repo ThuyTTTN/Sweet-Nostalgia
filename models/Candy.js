@@ -29,7 +29,7 @@ Candy.init({
     // defines type of data in the column
     type: DataTypes.INTEGER,
     references: {
-      model: "User",
+      model: "user",
       key: "id",
     },
   }
