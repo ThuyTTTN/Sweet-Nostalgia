@@ -124,12 +124,12 @@ router.post('/login', (req, res) => {
         // send the response back to the client
         .then(dbLoginData => {
             // if there is no user with the email or password we send a 404 status
-            if (!dbLoginData || !dbLoginData.password) {
-                res.status(404).json({ message: 'Login Failed' });
+            if (!dbLoginData) {
+                res.status(404).json({ message: 'No user with that email address' });
                 return;
             }
             // this variable is to check if the password is correct
-            const correctPass = User.checkPassword(req.body.password);
+            const correctPass = dbLoginData.checkPassword(req.body.password);
             // if the password is incorrect we send a 404 status
             if (!correctPass) {
                 res.status(400).json({ message: 'Invalid Password' });
@@ -138,11 +138,11 @@ router.post('/login', (req, res) => {
             // set up session if the password is correct
             req.session.save(() => {
                 // set the session  email to the user email of the user who is logging in
-                req.session.email = User.email,
+                req.session.email = dbLoginData.email,
                 // the purpose of session.loggedIn is to check if the user is logged in or not
-                res.session.loggedIn = true;
+                req.session.loggedIn = true;
                 // send the respsone with the user data
-                res.json({ User, message: 'You are now logged in!'  })
+                res.json({ user: dbLoginData, message: 'You are now logged in!'  })
             });
             // catch any errors
         }).catch(err => {
