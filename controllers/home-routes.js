@@ -1,6 +1,6 @@
 // modules required for routing
 const router = require('express').Router();
-// const { User, Candy } = require('../models');
+
 
 // GET signup page
 router.get('/signup', (req, res) => { // we are checking if the user is logged in
@@ -24,10 +24,10 @@ router.get('/login', (req, res) => { //we are checking if the user is logged in
     res.render('login');
 });
 
-//  GET home page
-router.get('/', (req, res) => { // anyone can access this page
-    //  home.handlebars file
-    res.render('homepage');
-});
+// //  GET home page
+// router.get('/', (req, res) => { // anyone can access this page
+//     //  home.handlebars file
+//     res.render('homepage');
+// });
 
 module.exports = router;
