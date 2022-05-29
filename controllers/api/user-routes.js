@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 // the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade']
+                attributes: ['id', 'category_decade', 'userId']
             }]
         })
         // send the response back to the client

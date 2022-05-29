@@ -1,5 +1,5 @@
 // Modules required
-const  Candy  = require('../models/Candy');
+const Candy = require('../models/Candy');
 
 // variable to hold all the candy data
 const candyData = [
@@ -7,8 +7,7 @@ const candyData = [
     {
         // the decade of candy
         category_decade: '70s',
-      userId: 1,
-
+        userId: 1,
     },
     {
         category_decade: '80s',
