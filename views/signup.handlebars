@@ -1,10 +1,30 @@
 
     <div class="container">
         <div class="row">
-            <div class="signup-hero pb-3">
+            <div class="signup-hero p-3">
                 <h1>Craving something sweet. Give your sweet tooth exactly what it needs</h1>
                 <div class="signup-form">
                     <form class="row g-3 requires-validation" novalidate>
+                        <div class="col-md-12">
+                            <label for="first-input-signup" class="form-label">First Name:</label>
+                            <input type="name" class="form-control" id="first-input-signup" required>
+                            <div class="valid-feedback">
+                                First Name looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                First Name is required!
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="last-input-signup" class="form-label">Last Name:</label>
+                            <input type="name" class="form-control" id="last-input-signup" required>
+                            <div class="valid-feedback">
+                                Last Name looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Last Name is required!
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <label for="email-input-signup" class="form-label">Email:</label>
                             <input type="email" class="form-control" id="email-input-signup" required>
@@ -15,6 +35,16 @@
                                 Email is required!
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <label for="password-input-signup" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="password-input-signup" required>
+                            <div class="valid-feedback">
+                                Password looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Password is required!
+                        </div>
+                        </div>
                         <div class="col-12">
                             <button class="btn btn-danger" type="submit">Get Sweets Today</button>
                         </div>
@@ -23,84 +53,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-{{!-- <div class="container">
-    <div class="row">
-        <div class="signup-hero pb-3">
-            <h1>Craving something sweet. Give your sweet tooth exactly what it needs</h1>
-            <div class="signup-form">
-                <div class="row">
-                    <div class="col-md-6 mb-4 mt-3">
-                        <div class="form-outline">
-                            <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1m">First name</label>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="form-outline">
-                            <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Example1n">Last name</label>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-4">
-                        <label for="email-input-login" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email-input-login" required>
-                        <div class="valid-feedback">
-                            Email looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Email is required!
-                        </div>
-                    </div>
-
-
-                    <div class="form-outline mb-4">
-                        <input type="text" id="form3Example8" class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example8">Address</label>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <select class="select">
-                                <option value="1">State</option>
-                                <option value="2">Florida</option>
-                                <option value="3">New York</option>
-                                <option value="4">Georgia</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <select class="select">
-                                <option value="1">City</option>
-                                <option value="2">Bronx</option>
-                                <option value="3">Orlando</option>
-                                <option value="4">Los Angeles</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-end pt-3">
-                        <button type="button" class="btn btn-light btn-lg">Reset all</button>
-                        <button type="button" class="btn btn-warning btn-lg ms-2">Submit form</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-
-
-
-
-
-
-
-
-
-
 
 
     {{!-- <div class="card">
