@@ -24,6 +24,14 @@ Candy.init({
     type: DataTypes.STRING,
     // does not allow value to be empty
     allowNull: false,
+  },
+  userId: {
+    // defines type of data in the column
+    type: DataTypes.INTEGER,
+    references: {
+      model: "User",
+      key: "id",
+    },
   }
 }, {
   sequelize,
