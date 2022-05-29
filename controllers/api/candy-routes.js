@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
                 // the model is the table we want to include
                 model: User,
                 // the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'email', 'password']
+                attributes: ['id', 'email', 'first_name', 'last_name',]
             }
         ]
     })

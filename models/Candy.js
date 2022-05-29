@@ -24,11 +24,18 @@ Candy.init({
     type: DataTypes.STRING,
     // does not allow value to be empty
     allowNull: false,
+  },
+  userId: {
+    // defines type of data in the column
+    type: DataTypes.INTEGER,
+    references: {
+      model: "user",
+      key: "id",
+    },
   }
 }, {
-  // adding our database connection to our model... this is ES6 shorthand for sequelize: sequelize 
   sequelize,
-  //  the purpose of timestamp is to automatically add the columns "created_at" and "updated_at" to the table
+  // the purpose of timestamp is to automatically add the created_at and updated_at columns to the table
   timestamp: false,
   // the purpose of the freezeTableName is to freeze the table name to the name of the model
   freezeTableName: true,

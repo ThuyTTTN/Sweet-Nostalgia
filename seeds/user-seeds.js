@@ -23,7 +23,7 @@ const userData = [
     state: "Florida",
     zipCode: "32836",
   },
-  {
+   {
     first_name: "Pixy",
     last_name: "Dust",
     email: "Pixy@example.com",
