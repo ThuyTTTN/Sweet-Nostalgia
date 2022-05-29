@@ -1,7 +1,7 @@
 // a anonymous function is used to avoid global variables
-(function () {
+function  login() {
     // we are 'use strict" to prevent any variables from leaking into the global scope
-    'use strict'
+    // 'use strict'
     // we make a variable for the form using querySelector to select all forms with the class
     const forms = document.querySelectorAll('.requires-validation')
     // we loop through the forms using the Array.form method, which returns an array of all elements in the list based on the specified selector.
@@ -21,4 +21,4 @@
           form.classList.add('was-validated')
         }, false) // we add the false to the end of the function to prevent the event from bubbling up the DOM tree
       })
-    })() // we call the anonymous function to prevent any variables from leaking into the global scope
+    }login() // we call the anonymous function to prevent any variables from leaking into the global scope
