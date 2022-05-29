@@ -12,7 +12,7 @@ async function signupFormHandles (event){
 
 
     if(first_name && last_name && email && password && address && city && state && zipCode){
-        const signupApi = await fetch('/api/users',{
+        const response = await fetch('/api/users',{
             method:'POST',
             body:JSON.stringify({
                 first_name,
@@ -26,7 +26,7 @@ async function signupFormHandles (event){
             }),
             headers:{'Content-Type':'application/json'},
         });
-        if(signupApi.ok){
+        if(response.ok){
             document.location.replace('/dashboard');
         }else{
             alert('Faliure to sign up :(');
