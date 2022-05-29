@@ -11,10 +11,6 @@ const candyData = [
     {
         category_decade: '80s',
     },
-    {
-        category_decade: '90s',
-    }
-    // TODO: add wild card 
 ];
 
 ///variable to hold all the candy for each user  in the candyData array
