@@ -8,13 +8,24 @@
 
                     <div class="col-md-12 pt-3">
                         <div class="input-group">
-                            <span class="input-group-text">First and last name</span>
-                            <input type="name" class="form-control" id="first-input-signup" required>
-                            <input type="name" class="form-control" id="last-input-signup" required>
+                            <span class="input-group-text" for="first-input-signup last-input-signup">First and last name</span>
+                            <input type="name" class="form-control" id="first-input-signup" placeholder="Bob" required>
+                            <input type="name" class="form-control" id="last-input-signup" placeholder="Vance" required>
                             <div class="invalid-feedback">
                                 First and last name is required
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="inputAddress" class="form-label">Address:</label>
+                        <input type="address" class="form-control" id="" placeholder="1234 Vance Refrigeration" required>
+                          <div class="valid-feedback">
+                                Address looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Addres is required!
+                            </div>
                     </div>
 
                     <div class="col-md-12">
