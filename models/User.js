@@ -82,14 +82,14 @@ User.init({
   // defines the country column
   state: {
     // defines type of data in the column
-    dataType: DataTypes.STRING,
+    type: DataTypes.STRING,
     // does not allow value to be empty
     allowNull: false,
   },
   // defines the zipcode column
   zipCode: {
     // defines type of data in the column
-    dataType: DataTypes.STRING,
+    type: DataTypes.STRING,
     // does not allow value to be empty
     allowNull: false,
   },
@@ -97,14 +97,20 @@ User.init({
   // the purpose of the hooks is to do something before or after the model method is run
   hooks: {
     // beforeCreate is a hook that runs before the create method is run
-    async beforeCreate(newUserData) {
-      //    we are hashing the password
-      newUserData.pasword = await bcrypt.hash(newUserData.password, 10);
-      // using the bcrypt module to hash the password and store it in the password column
-      return newUserData;
+   async beforeCreate(newUserData) {
+    //    we are hashing the password
+        newUserData.password = await bcrypt.hash(newUserData.password, 10)
+        // using the bcrypt module to hash the password and store it in the password column
+        return newUserData;
     },
-  },
-  // adding our database connection to our model... this is ES6 shorthand for sequelize: sequelize 
+    // beforeUpdate is a hook that runs before the update method is run
+    async beforeUpdate(newUserData) {
+        // if the password column is being updated we are hashing the password
+        newUserData.password = await bcrypt.hash(newUserData.password, 10)
+        // using the bcrypt module to hash the password and store it in the password column
+        return newUserData;
+    }
+},  // adding our database connection to our model... this is ES6 shorthand for sequelize: sequelize 
   sequelize,
   // the purpose of timestamp is to automatically add the created_at and updated_at columns to the table
   timestamp: false,
