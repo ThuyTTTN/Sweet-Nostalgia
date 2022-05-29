@@ -1,3 +1,5 @@
+
+
 root {
     padding: 0;
     margin: 0;
@@ -79,5 +81,17 @@ h6 {
     background-color: #e8e8f8;
     margin-bottom: 10%;
     margin-top: 10%;
-    border-radius: 4%;
+    border-radius: 2%;
+}
+
+
+.signup-hero {
+    background-color: yellow;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 2%;
+}
+
+.terms {
+    color: blue;
 }
