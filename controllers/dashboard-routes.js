@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 //  GET home page
 router.get('/', withAuth, (req, res) => { 
     // home.handlebars file
-    res.render('dashboard');
+    res.render('dashboard', {loggedIn: true });
 });
 
 //    // ability to logout 
