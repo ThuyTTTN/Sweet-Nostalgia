@@ -23,28 +23,28 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-// router.get('/edit/:id', (req, res) => {
-//     // access the candel model to find a single candy
-//     User.findOne({
-//         // find the candy for the user by id
-//         where: {
-//             // the id is in the user
-//             id: req.params.id
-//         } 
-//     })
-//     // send the response back to the client
-//     .then(dbUserData => { 
-//         const user = dbUserData.get({ plain: true });
-//         res.render('edit-user', {
-//             user: user
-//         })
-//     })
-//     // catch any errors
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
+router.get('/edit/:id', (req, res) => {
+    // access the candel model to find a single candy
+    User.findOne({
+        // find the candy for the user by id
+        where: {
+            // the id is in the user
+            id: req.params.id
+        } 
+    })
+    // send the response back to the client
+    .then(dbUserData => { 
+        const user = dbUserData.get({ plain: true });
+        res.render('edit-user', {
+            user: user
+        })
+    })
+    // catch any errors
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;
 

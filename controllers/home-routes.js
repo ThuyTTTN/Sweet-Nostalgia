@@ -1,7 +1,7 @@
 // modules required for routing
 const router = require('express').Router();
 // const { User, Candy } = require('../models');
-const sequelize = require('../config/connection');
+
 
 // GET signup page
 router.get('/signup', (req, res) => {   // we are checking if the user is logged in
@@ -28,7 +28,7 @@ router.get('/login', (req, res) => {  // we are checking if the user is logged i
 //  GET home page
 router.get('/', (req, res) => { // anyone can access this page
     //  home.handlebars file
-    res.render('homepage');
+    res.render('homepage', {loggedIn: req.session.loggedIn});
 });
 
 module.exports = router;
