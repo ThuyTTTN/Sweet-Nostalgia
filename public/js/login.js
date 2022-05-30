@@ -30,10 +30,10 @@ const loginFormHandles = async function (event) {
 
         // if the response is ok we send the response to the client and we redirect to the dashboard page
         if (response.ok) {
-            document.location.replace('/')
+            document.location.replace('/dashboard')
         } else {
             // if the response is not ok we send the response to the client
-            alert(response.statusText);
+            alert('Incorrect username or password');
         }
     }
 };

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 // the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade', 'userId']
+                attributes: ['id', ]
             }]
         })
         // send the response back to the client
@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 //   the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade']
+                attributes: ['id', ]
             }]
         })
         // send the response back to the client
@@ -67,6 +67,36 @@ router.get('/:id', (req, res) => {
         });
 });
 
+router.put('/:id', withAuth, (req, res) => {
+    // access the User model to find a single user
+    User.findOne({
+            // find the user by id
+            where: {
+                id: req.params.id
+            }
+        })
+        // update the user with the new data
+        .then(dbUserData => {
+            // if there is no user with the id  we send a 404 status
+            if (!dbUserData) {
+                res.status(404).json({
+                    message: 'No user found with this id'
+                });
+                return;
+            }
+            // if there is a user with the id we update the user with the new data
+            return dbUserData.update(req.body);
+        })
+        // send the response back to the client
+        .then(dbUserData => res.json(dbUserData))
+        // catch any errors
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
 // POST /api/users
 router.post('/', (req, res) => {
     // access the User model to create a new user
@@ -86,16 +116,18 @@ router.post('/', (req, res) => {
             // the state is the state the user lives in
             state: req.body.state,
             // the zip is the zip code of the user
-            zipCode: req.body.zipCode
+            zipCode: req.body.zipCode,
+            // the candy is the candy the user subscribed to
+            candyId: req.body.candyId
         })
         // send the response back to the client
         .then(dbUserData => {
             // save the session before sending the response
             req.session.save(() => {
                 // set the session user_id to the user id of the user we just created
-                req.session.user_id = dbUserData.id;
+                req.session.id = dbUserData.id;
                 // set teh session email to the email of the user we just created
-                req.session.user_email = dbUserData.email;
+                req.session.email = dbUserData.email;
                 // the purpose of session.loggedIn is to check if the user is logged in or not
                 req.session.loggedIn = true;
                 // send the user back to the client
@@ -111,50 +143,48 @@ router.post('/', (req, res) => {
 
 
 
-// LOGIN USER /api/users/login HERE...
-router.post('/login', (req, res) => {
-    // access the User model to find a single user
+   // ability to login
+   router.post('/login', (req, res) => {
+    // access the User model and find the user with the email we are trying to log in with
     User.findOne({
-            // find the user by email
-            where: {
-                //  the email is the email we are trying to log in with
-                email: req.body.email
-            }
-        })
-        // send the response back to the client
-        .then(dbLoginData => {
-            // if there is no user with the email or password we send a 404 status
-            if (!dbLoginData) {
-                res.status(404).json({ message: 'No user with that email address' });
-                return;
-            }
-            // this variable is to check if the password is correct
-            const correctPass = dbLoginData.checkPassword(req.body.password);
-            // if the password is incorrect we send a 404 status
-            if (!correctPass) {
-                res.status(400).json({ message: 'Invalid Password' });
-                return;
-            }
-            // set up session if the password is correct
-            req.session.save(() => {
-                // set the session  email to the user email of the user who is logging in
-                req.session.email = dbLoginData.email,
-                // the purpose of session.loggedIn is to check if the user is logged in or not
-                req.session.loggedIn = true;
-                // send the respsone with the user data
-                res.json({ user: dbLoginData, message: 'You are now logged in!'  })
-            });
-            // catch any errors
-        }).catch(err => {
-            console.log(err);
-            res.status(500).json(err)
-        });
+      where: {
+        // the email is the email we are trying to log in with
+        email: req.body.email
+      }
+    }).then(dbUserData => {
+        // if the user is not found we send an error
+      if (!dbUserData) {
+        res.status(400).json({ message: 'No user with that email address!' });
+        return;
+      }
+      // this variable is to check if the password is correct
+      const validPassword = dbUserData.checkPassword(req.body.password);
+      // if the password is incorrect we send an error
+        if (!validPassword) {
+          res.status(400).json({ message: 'Incorrect password!' });
+          return;
+        }
+          // set up session if the password is correct
+          req.session.save(() => {
+            // set the session user_id to the user id of the user who is logging in
+            req.session.id = dbUserData.id,
+            // set the session username to the username of the user who is logging in
+            req.session.email = dbUserData.email,
+            // the purpose of session.loggedIn is to check if the user is logged in or not
+            req.session.loggedIn = true,
+            // send the response with the user data
+            console.log(req.session); 
+            console.log(req.session.loggedIn);
+
+            console.log(req.session.id)
+            console.log(req.session.email)
+            console.log(dbUserData)
+    res.json({ email: dbUserData, message: 'You are now logged in!' });
+    });
+});
 });
 
-
-
-
-// LOGOUT USER /api/users/logout HERE...
+   // ability to logout 
 router.post('/logout', (req, res) => {
     // if the user is logged in they have the ability to logout
     if (req.session.loggedIn) {
@@ -167,8 +197,6 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
-
-
 
 
 // DELETE /api/users/1

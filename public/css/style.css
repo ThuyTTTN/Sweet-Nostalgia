@@ -95,3 +95,21 @@ h6 {
 .terms {
     color: blue;
 }
+
+/* .button-no-style {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #48565f;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 2px;
+  }
+  
+  .button-no-style:hover {
+    background: none;
+    color: #3486eb;
+  } */

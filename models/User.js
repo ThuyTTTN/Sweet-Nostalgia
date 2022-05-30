@@ -62,7 +62,7 @@ User.init({
     validate: {
       len: [8],
       // checks if password has 1 letter 1 number and 1 special character
-      is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+      // is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     },
   },
   //  dfines the address column 
@@ -93,6 +93,10 @@ User.init({
     // does not allow value to be empty
     allowNull: false,
   },
+  candyId: {
+    // defines type of data in the column
+    type: DataTypes.INTEGER,
+  }
 }, {
   // the purpose of the hooks is to do something before or after the model method is run
   hooks: {
