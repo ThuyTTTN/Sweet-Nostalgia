@@ -14,26 +14,28 @@ const userData = [
     zipCode: "60143",
     candyId: 1
   },
-  // {
-  //   first_name: "Jolly",
-  //   last_name: "Blanchers",
-  //   email: "Jolly@example.com",
-  //   password: "password123",
-  //   address: "123 Ranchers Road",
-  //   city: "Orlando",
-  //   state: "Florida",
-  //   zipCode: "32836",
-  // },
-  //  {
-  //   first_name: "Pixy",
-  //   last_name: "Dust",
-  //   email: "Pixy@example.com",
-  //   password: "password123",
-  //   address: "456 Stix Road",
-  //   city: "Orlando",
-  //   state: "Florida",
-  //   zipCode: "32801",
-  // },
+  {
+    first_name: "Jolly",
+    last_name: "Blanchers",
+    email: "Jolly@example.com",
+    password: "password123",
+    address: "123 Ranchers Road",
+    city: "Orlando",
+    state: "Florida",
+    zipCode: "32836",
+    candyid: 1
+  },
+   {
+    first_name: "Pixy",
+    last_name: "Dust",
+    email: "Pixy@example.com",
+    password: "password123",
+    address: "456 Stix Road",
+    city: "Orlando",
+    state: "Florida",
+    zipCode: "32801",
+    candyId: 1
+  },
   // {
   //   first_name: "Mister",
   //   last_name: "Goodbar",
