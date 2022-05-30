@@ -5,20 +5,17 @@ const Candy = require('./Candy');
 
 // create associations
 User.belongsTo(Candy, {
-    foreignKey: 'candyId'
+    foreignKey: 'candy_id'
 });
 
 Candy.hasMany(User, {
-    foreignKey: 'candyId'
+    foreignKey: 'candy_id'
 });
+
+
+
 // *this works but is not ideal because it is not a one to many relationship maybe?
 // User.hasMany(Candy);
-
-
-
-
-
-
 
 // ! other possible associations for user
 // User.hasOne(Candy);

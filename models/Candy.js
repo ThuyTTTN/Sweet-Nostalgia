@@ -25,11 +25,14 @@ Candy.init({
   //   // does not allow value to be empty
   //   allowNull: false,
   // },
-  candyId: {
-    type: DataTypes.INTEGER,
+  // candyId: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: false,
+  // },
+  candyDecade: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
-  
 }, {
   sequelize,
   // the purpose of timestamp is to automatically add the created_at and updated_at columns to the table

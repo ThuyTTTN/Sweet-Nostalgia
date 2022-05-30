@@ -6,24 +6,23 @@ const candyData = [
     // expects key value pairs (candy_decade)
     {
         // the decade of candy
-        candyId: '1',
-
+        candyDecade: '70s',
     },
     {
-        candyId: '2',
+        candyDecade: '80s',
     },
     {
-        candyId: '3',
+        candyDecade: '90s',
     },
-    {
-        candyId: '1',
-    },
-    {
-        candyId: '2',
-    },
-    {
-        candyId: '3',
-    }
+    // {
+    //     candyId: '1',
+    // },
+    // {
+    //     candyId: '2',
+    // },
+    // {
+    //     candyId: '3',
+    // }
 ];
 
 ///variable to hold all the candy for each user  in the candyData array

@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
         },
         // the attributes are the columns we want to return
         attributes: [
-            'candyId',
+            'candy_id',
         ],
         // include the user that subscribed to the candy
         include: [
@@ -85,7 +85,7 @@ router.put('/:id', withAuth, (req, res) => {
     Candy.update(
         {
             // the category_decade is the column we want to update
-            candyId: req.body.candyId
+            candy_id: req.body.candy_id
         },
         // {
         //     // the where clause is the id of the candy we want to update
