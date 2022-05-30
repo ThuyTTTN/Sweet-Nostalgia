@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 // the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade', 'userId']
+                attributes: ['id', 'candyId']
             }]
         })
         // send the response back to the client
@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 //   the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade']
+                attributes: ['candyId']
             }]
         })
         // send the response back to the client
@@ -86,7 +86,9 @@ router.post('/', (req, res) => {
             // the state is the state the user lives in
             state: req.body.state,
             // the zip is the zip code of the user
-            zipCode: req.body.zipCode
+            zipCode: req.body.zipCode,
+            // **THUY added this
+            candyId: req.body.candyId
         })
         // send the response back to the client
         .then(dbUserData => {

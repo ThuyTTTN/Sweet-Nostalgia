@@ -92,8 +92,15 @@ User.init({
     type: DataTypes.STRING,
     // does not allow value to be empty
     allowNull: false,
+  }, 
+  candyId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    foreignKey: true
   },
-}, {
+     
+  }, 
+  {
   // the purpose of the hooks is to do something before or after the model method is run
   hooks: {
     // beforeCreate is a hook that runs before the create method is run
