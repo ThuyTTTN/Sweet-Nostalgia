@@ -9,7 +9,7 @@ router.get('/', withAuth, (req, res) => {
     User.findAll({
         // we are using the user id to find the user's subscription
         where: {
-            id: req.session.user_id
+            id: req.session.id
         }
     })
     // send the response back to the client

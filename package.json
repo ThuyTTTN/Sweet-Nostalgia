@@ -1,7 +1,7 @@
 {
-  "name": "e-commerce-boba",
+  "name": "sweet-nostalgia",
   "version": "1.0.0",
-  "description": "E-commerce for Boba",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Brainybrian316/E-Commerce-Boba.git"
+    "url": "git+https://github.com/Brainybrian316/Sweet-Nostalgia.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Brainybrian316/E-Commerce-Boba/issues"
+    "url": "https://github.com/Brainybrian316/Sweet-Nostalgia/issues"
   },
-  "homepage": "https://github.com/Brainybrian316/E-Commerce-Boba#readme",
+  "homepage": "https://github.com/Brainybrian316/Sweet-Nostalgia#readme",
   "devDependencies": {
     "jest": "^28.1.0",
     "nodemon": "^2.0.16"
