@@ -9,17 +9,12 @@ router.get('/', withAuth, (req, res) => {
     User.findAll({
         // we are using the user id to find the user's subscription
         where: {
-            id: req.session.userId
+            id: req.session.user_id
         }
     })
     // send the response back to the client
     .then(dbUserData => { // render the dashboard.handlebars file
-        res.render('dashboard', {
-            // we are using the user id to find the user's subscription
-            user: dbUserData[0].dataValues,
-            // we are using the user id to find the user's subscription
-            subscription: dbUserData[0].dataValues.subscription
-        });
+        res.render('dashboard');
     })
     // catch any errors
     .catch (err => {

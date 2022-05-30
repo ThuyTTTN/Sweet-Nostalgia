@@ -95,7 +95,7 @@ router.post('/', (req, res) => {
                 // set the session user_id to the user id of the user we just created
                 req.session.user_id = dbUserData.id;
                 // set teh session email to the email of the user we just created
-                req.session.user_email = dbUserData.email;
+                req.session.email = dbUserData.email;
                 // the purpose of session.loggedIn is to check if the user is logged in or not
                 req.session.loggedIn = true;
                 // send the user back to the client
@@ -137,8 +137,11 @@ router.post('/', (req, res) => {
           req.session.save(() => {
             // set the session user_id to the user id of the user who is logging in
             req.session.user_id = dbUserData.id;
+            req.session.first_name = dbUserData.first_name;
+            req.session.last_name = dbUserData.last_name;
+
             // set the session username to the username of the user who is logging in
-            req.session.email = dbUserData.email;
+            // req.session.email = dbUserData.email;
             // the purpose of session.loggedIn is to check if the user is logged in or not
             req.session.loggedIn = true;
             // send the response with the user data
