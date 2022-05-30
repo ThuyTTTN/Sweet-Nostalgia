@@ -33,7 +33,7 @@ const loginFormHandles = async function (event) {
             document.location.replace('/dashboard')
         } else {
             // if the response is not ok we send the response to the client
-            alert(response.statusText);
+            alert('Incorrect username or password');
         }
     }
 };

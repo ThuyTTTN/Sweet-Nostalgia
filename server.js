@@ -7,6 +7,7 @@ const helpers = require('./utils/helpers');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
 
+
 //  initial variables are declared for use in the server.js file
 const app = express();
 const PORT = process.env.PORT || 3001;
