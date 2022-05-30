@@ -166,8 +166,7 @@ router.post('/', (req, res) => {
         }
           // set up session if the password is correct
           req.session.save(() => {
-            // set the session user_id to the user id of the user who is logging in
-            req.session.id = dbUserData.id,
+            req.session.Id = dbUserData.id;
             // set the session username to the username of the user who is logging in
             req.session.email = dbUserData.email,
             // the purpose of session.loggedIn is to check if the user is logged in or not

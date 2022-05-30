@@ -62,14 +62,27 @@
  
     {{!-- end of navbar --}}
 
+        {{!-- {{#if}} user is logged in display h1 logged in --}}
+        {{#if loggedIn}}
+        <h1 class="text-white">Welcome</h1>
+        {{!-- else --}}
+        {{else}}
+        <h1 class="text-white">if logged in not working</h1>
+        {{/if}}
+       
+    
+
+
+    {{!-- end of container for navbar --}}
+
+    {{!-- container for main content --}}
+
+
     {{!-- container for main content --}}
     <main>
-            {{#if loggedIn}}
-                        <h1 class="text-white">this works</h1>
-                        {{else}}
-                        <h1 class="text-white">testing</h1>
-                        {{/if}}
-            
+
+   
+  
         {{!-- main content goes here --}}
         {{{ body }}}
 
