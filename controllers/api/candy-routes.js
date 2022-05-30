@@ -71,8 +71,9 @@ router.get('/:id', (req, res) => {
 // POST reqeust
 router.post('/', withAuth, (req, res) => {
     Candy.create({
-        category_decade: req.body.category_decade,
-        created_at: req.body.created_at
+       candy_70s: req.body.candy_70s,
+        candy_80s: req.body.candy_80s, 
+        candy_90s: req.body.candy_90s,  
     })
     .then(dbUserData => {
         res.json(dbUserData)})
@@ -86,7 +87,9 @@ router.put('/:id', withAuth, (req, res) => {
     Candy.update(
         {
             // the category_decade is the column we want to update
-            category_decade: req.body.category_decade
+            candy_70s: req.body.candy_70s,
+            candy_80s: req.body.candy_80s,
+            candy_90s: req.body.candy_90s,
         },
         {
             // the where clause is the id of the candy we want to update

@@ -7,7 +7,9 @@ const candyData = [
     {
         // the decade of candy
         candy_70s: 1,
-    }
+        candy_80s: 2,
+        candy_90s: 3,
+    },
 ];
 
 ///variable to hold all the candy for each user  in the candyData array
