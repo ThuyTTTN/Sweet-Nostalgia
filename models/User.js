@@ -93,6 +93,10 @@ User.init({
     // does not allow value to be empty
     allowNull: false,
   },
+  candyId: {
+    // defines type of data in the column
+    type: DataTypes.INTEGER,
+  }
 }, {
   // the purpose of the hooks is to do something before or after the model method is run
   hooks: {

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 // the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade', 'userId']
+                attributes: ['id', ]
             }]
         })
         // send the response back to the client
@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
                 // the model is the table we want to include
                 model: Candy,
                 //   the atribbutes are the columns we want to return for the user that subscribed to the candy
-                attributes: ['id', 'category_decade']
+                attributes: ['id', ]
             }]
         })
         // send the response back to the client
@@ -67,6 +67,36 @@ router.get('/:id', (req, res) => {
         });
 });
 
+router.put('/:id', withAuth, (req, res) => {
+    // access the User model to find a single user
+    User.findOne({
+            // find the user by id
+            where: {
+                id: req.params.id
+            }
+        })
+        // update the user with the new data
+        .then(dbUserData => {
+            // if there is no user with the id  we send a 404 status
+            if (!dbUserData) {
+                res.status(404).json({
+                    message: 'No user found with this id'
+                });
+                return;
+            }
+            // if there is a user with the id we update the user with the new data
+            return dbUserData.update(req.body);
+        })
+        // send the response back to the client
+        .then(dbUserData => res.json(dbUserData))
+        // catch any errors
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
 // POST /api/users
 router.post('/', (req, res) => {
     // access the User model to create a new user
@@ -86,7 +116,9 @@ router.post('/', (req, res) => {
             // the state is the state the user lives in
             state: req.body.state,
             // the zip is the zip code of the user
-            zipCode: req.body.zipCode
+            zipCode: req.body.zipCode,
+            // the candy is the candy the user subscribed to
+            candyId: req.body.candyId
         })
         // send the response back to the client
         .then(dbUserData => {
