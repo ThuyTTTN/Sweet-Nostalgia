@@ -18,20 +18,26 @@ Candy.init({
     // auto increments the id by 1
     autoIncrement: true,
   },
-  // defines the category_decade column
-  category_decade: {
-    // defines type of data in the column
-    type: DataTypes.STRING,
-    // does not allow value to be empty
-    allowNull: false,
-  },
-  userId: {
+  // defines the 70s column
+  candy_70s: {
     // defines type of data in the column
     type: DataTypes.INTEGER,
-    references: {
-      model: "user",
-      key: "id",
-    },
+    // does not allow value to be empty
+
+  },
+  // defines the 80s column
+  candy_80s: {
+    // defines type of data in the column
+    type: DataTypes.INTEGER,
+    // does not allow value to be empty
+
+  },
+  // defines the 90s column
+  candy_90s: {
+    // defines type of data in the column
+    type: DataTypes.INTEGER,
+    // does not allow value to be empty
+
   }
 }, {
   sequelize,

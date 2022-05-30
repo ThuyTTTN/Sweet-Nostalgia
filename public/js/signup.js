@@ -1,4 +1,4 @@
-async function signupFormHandles (event){
+async function signupFormHandles(event) {
     event.preventDefault();
 
     const first_name = document.querySelector('#first-input-signup');
@@ -11,10 +11,12 @@ async function signupFormHandles (event){
     const zipCode = document.querySelector('#zip-input-signup');
 
 
-    if(first_name && last_name && email && password && address && city && state && zipCode){
-        const response = await fetch('/api/users',{
-            method:'POST',
-            body:JSON.stringify({
+    if (first_name && last_name && email && password && address && city && state && zipCode) {
+        const response = await fetch('/api/users', { // fetch the users with the username, email and password provided to signup
+            // the method is POST to create a new user
+            method: 'post',
+            // body is the data we want to send to the server
+            body: JSON.stringify({
                 first_name,
                 last_name,
                 email,
@@ -24,14 +26,20 @@ async function signupFormHandles (event){
                 state,
                 zipCode
             }),
-            headers:{'Content-Type':'application/json'},
+            // the headers are the headers we want to send to the server
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
-        if(response.ok){
+
+        // check the response status
+        if (response.ok) {
+            //  if the response is ok we send the response to the client and we redirect to the dashboard page
             document.location.replace('/dashboard');
-        }else{
+        } else {
             alert('Faliure to sign up :(');
         }
     };
 };
 
-document.querySelector('.signup-form').addEventListener('submit',signupFormHandles);
+document.querySelector('.signup-form').addEventListener('submit', signupFormHandles);

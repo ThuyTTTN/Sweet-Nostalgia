@@ -80,37 +80,37 @@ router.get('/:id', (req, res) => {
 // });
 
 
-// PUT request
-router.put('/:id', withAuth, (req, res) => {
-    // access the candy model to find a single candy
-    Candy.update(
-        {
-            // the category_decade is the column we want to update
-            category_decade: req.body.category_decade
-        },
-        {
-            // the where clause is the id of the candy we want to update
-            where: {
-            id: req.params.id
-            }
-        }
-    )
-    // send the response back to the client
-    .then(dbCandyData => {
-        // if there is no candy with the id we send a 404 status
-        if (!dbCandyData) {
-            res.status(404).json({ message: 'No data found with this id' });
-            return;
-        }
-        // if there is a candy with the id we send the candy back to the client
-         res.json(dbCandyData);
-    })
-    // catch any errors
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
-});
+// // PUT request
+// router.put('/:id', withAuth, (req, res) => {
+//     // access the candy model to find a single candy
+//     Candy.update(
+//         {
+//             // the category_decade is the column we want to update
+//             category_decade: req.body.category_decade
+//         },
+//         {
+//             // the where clause is the id of the candy we want to update
+//             where: {
+//             id: req.params.id
+//             }
+//         }
+//     )
+//     // send the response back to the client
+//     .then(dbCandyData => {
+//         // if there is no candy with the id we send a 404 status
+//         if (!dbCandyData) {
+//             res.status(404).json({ message: 'No data found with this id' });
+//             return;
+//         }
+//         // if there is a candy with the id we send the candy back to the client
+//          res.json(dbCandyData);
+//     })
+//     // catch any errors
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// });
 
 
 //DELETE request

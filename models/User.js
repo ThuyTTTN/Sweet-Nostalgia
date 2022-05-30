@@ -62,7 +62,7 @@ User.init({
     validate: {
       len: [8],
       // checks if password has 1 letter 1 number and 1 special character
-      is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+      // is: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
     },
   },
   //  dfines the address column 
