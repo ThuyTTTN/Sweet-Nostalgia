@@ -1,14 +1,14 @@
 async function signupFormHandles(event) {
     event.preventDefault();
 
-    const first_name = document.querySelector('#first-input-signup');
-    const last_name = document.querySelector('#last-input-signup');
-    const email = document.querySelector('#email-input-signup');
-    const password = document.querySelector('#password-input-signup');
-    const address = document.querySelector('#address-input-signup');
-    const city = document.querySelector('#city-input-signup');
-    const state = document.querySelector('#state-input-signup');
-    const zipCode = document.querySelector('#zip-input-signup');
+    const first_name = document.querySelector('#first-input-signup').value.trim();
+    const last_name = document.querySelector('#last-input-signup').value.trim();
+    const email = document.querySelector('#email-input-signup').value.trim();
+    const password = document.querySelector('#password-input-signup').value.trim();
+    const address = document.querySelector('#address-input-signup').value.trim();
+    const city = document.querySelector('#city-input-signup').value.trim();
+    const state = document.querySelector('#state-input-signup').value.trim();
+    const zipCode = document.querySelector('#zip-input-signup').value.trim();
 
 
     if (first_name && last_name && email && password && address && city && state && zipCode) {
