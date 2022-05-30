@@ -111,50 +111,43 @@ router.post('/', (req, res) => {
 
 
 
-// LOGIN USER /api/users/login HERE...
-router.post('/login', (req, res) => {
-    // access the User model to find a single user
+   // ability to login
+   router.post('/login', (req, res) => {
+    // access the User model and find the user with the email we are trying to log in with
     User.findOne({
-            // find the user by email
-            where: {
-                //  the email is the email we are trying to log in with
-                email: req.body.email
-            }
-        })
-        // send the response back to the client
-        .then(dbLoginData => {
-            // if there is no user with the email or password we send a 404 status
-            if (!dbLoginData) {
-                res.status(404).json({ message: 'No user with that email address' });
-                return;
-            }
-            // this variable is to check if the password is correct
-            const correctPass = dbLoginData.checkPassword(req.body.password);
-            // if the password is incorrect we send a 404 status
-            if (!correctPass) {
-                res.status(400).json({ message: 'Invalid Password' });
-                return;
-            }
-            // set up session if the password is correct
-            req.session.save(() => {
-                // set the session  email to the user email of the user who is logging in
-                req.session.email = dbLoginData.email,
-                // the purpose of session.loggedIn is to check if the user is logged in or not
-                req.session.loggedIn = true;
-                // send the respsone with the user data
-                res.json({ user: dbLoginData, message: 'You are now logged in!'  })
-            });
-            // catch any errors
-        }).catch(err => {
-            console.log(err);
-            res.status(500).json(err)
-        });
+      where: {
+        // the email is the email we are trying to log in with
+        email: req.body.email
+      }
+    })
+    .then(dbUserData => {
+        // if the user is not found we send an error
+      if (!dbUserData) {
+        res.status(400).json({ message: 'No user with that email address!' });
+        return;
+      }
+      // this variable is to check if the password is correct
+      const validPassword = dbUserData.checkPassword(req.body.password);
+      // if the password is incorrect we send an error
+        if (!validPassword) {
+          res.status(400).json({ message: 'Incorrect password!' });
+          return;
+        }
+          // set up session if the password is correct
+          req.session.save(() => {
+            // set the session user_id to the user id of the user who is logging in
+            req.session.user_id = dbUserData.id;
+            // set the session username to the username of the user who is logging in
+            req.session.email = dbUserData.email;
+            // the purpose of session.loggedIn is to check if the user is logged in or not
+            req.session.loggedIn = true;
+            // send the response with the user data
+    res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+});
 });
 
-
-
-
-// LOGOUT USER /api/users/logout HERE...
+   // ability to logout 
 router.post('/logout', (req, res) => {
     // if the user is logged in they have the ability to logout
     if (req.session.loggedIn) {
@@ -167,8 +160,6 @@ router.post('/logout', (req, res) => {
         res.status(404).end();
     }
 });
-
-
 
 
 // DELETE /api/users/1

@@ -8,11 +8,11 @@ const exphbs = require('express-handlebars');
 const session = require('express-session');
 
 //  initial variables are declared for use in the server.js file
-const PORT = process.env.PORT || 3001;
 const app = express();
+const PORT = process.env.PORT || 3001;
 
 //  helper variables for handlesbars
-const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers});
 
 // Middleware
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -40,8 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 // set handlebars as the default engine
 app.set('view engine', 'handlebars');
-// testing
-app.use(express.static("public"));
 // set up routes and controllers
 app.use(routes);
 
