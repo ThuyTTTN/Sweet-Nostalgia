@@ -3,7 +3,7 @@ const Candy = require('../models/Candy');
 
 // variable to hold all the candy data
 const candyData = [
-    // expects key value pairs (candy_decade)
+    // expects key value pairs (candy_id)
     {
         // the decade of candy
         candyDecade: '70s',

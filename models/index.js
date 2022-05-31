@@ -1,6 +1,7 @@
-// modules to require
+// modules to require   *****Added Product 
 const User = require('./User');
 const Candy = require('./Candy');
+const Product = require('./Product');
 
 
 // create associations
@@ -12,6 +13,19 @@ Candy.hasMany(User, {
     foreignKey: 'candy_id'
 });
 
+Product.belongsTo(Candy, {
+    foreignKey: 'candy_id'
+})
+
+Candy.hasMany(Product, {
+    foreignKey: 'candy_id'
+})
+
+User.hasMany(Product, {
+    foreignKey: 'candy_id'
+})
+
+module.exports = { User, Candy, Product };
 
 
 // *this works but is not ideal because it is not a one to many relationship maybe?
@@ -27,10 +41,3 @@ Candy.hasMany(User, {
 // Candy.belongsTo(User);
 // Candy.hasMany(User);
 // Candy.belongsToMany(User, { through: 'UserCandy' });
-
-
-
-
-
-
-module.exports = { User, Candy };
