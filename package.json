@@ -1,7 +1,7 @@
 {
-  "name": "e-commerce-boba",
+  "name": "sweet-nostalgia",
   "version": "1.0.0",
-  "description": "E-commerce for Boba",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -11,28 +11,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Brainybrian316/E-Commerce-Boba.git"
+    "url": "git+https://github.com/Brainybrian316/Sweet-Nostalgia.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Brainybrian316/E-Commerce-Boba/issues"
+    "url": "https://github.com/Brainybrian316/Sweet-Nostalgia/issues"
   },
-  "homepage": "https://github.com/Brainybrian316/E-Commerce-Boba#readme",
+  "homepage": "https://github.com/Brainybrian316/Sweet-Nostalgia#readme",
   "devDependencies": {
     "jest": "^28.1.0",
     "nodemon": "^2.0.16"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.3",
+    "connect-session-sequelize": "^7.1.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.20.0"
+    "sequelize": "^6.20.1"
   }
 }

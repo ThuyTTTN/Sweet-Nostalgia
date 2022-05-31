@@ -1,17 +1,19 @@
 // modules to require
-const User = require('./User');
 const Candy = require('./Candy');
+const User = require('./User');
 
 
+// *this worked at one point here
 // create associations
-User.hasOne(Candy);
+// User.hasOne(Candy);
 // *this works but is not ideal because it is not a one to many relationship maybe?
 // User.hasMany(Candy);
+// Candy.belongsTo(User);
+// *the end of working coding
 
+Candy.hasMany(User);
 
-
-Candy.belongsTo(User);
-
+User.belongsTo(Candy);
 
 
 // ! other possible associations for user
@@ -30,4 +32,4 @@ Candy.belongsTo(User);
 
 
 
-module.exports = { User, Candy };
+module.exports = { Candy, User };
