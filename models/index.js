@@ -10,21 +10,10 @@ const Product = require('./Product');
 // create associations
 
 
-User.hasMany(Candy);
+User.belongsToMany(Product, { through: Candy})
 
-Candy.belongsTo(User);
+Product.belongsToMany(User, { through: Candy})
 
-Candy.hasMany(Product);
-
-Candy.belongsTo(Product);
-
-User.hasMany(Product);
-
-Product.belongsTo(User);
-
-Product.hasMany(Candy);
-
-Candy.belongsTo(Product);
 
 
 
