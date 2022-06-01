@@ -1,27 +1,41 @@
-
-<div class="card">
-
-  <h2 class="card-header">LOGIN</h2>
-
-  <form class="card-body login-form">
-
-    <div class="form-group">
-      <label class="form-label">Email:</label>
-      <input class="form-input" type="text" id="email-input-login" />
+<div class="container">
+  <div class="row">
+    <div class="login-hero pb-3">
+      <h1>Welcome Back User Please Login to Manage Your Subscription </h1>
+      <div class="login-form">
+        <form class="row g-3 requires-validation" novalidate>
+          <div class="col-md-12">
+            <label for="email-input-login" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="email-input-login" required>
+            <div class="valid-feedback">
+              Email looks good!
+            </div>
+            <div class="invalid-feedback">
+              Email is required!
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="password-input-login" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password-input-login" required>
+            <div class="valid-feedback">
+              Password looks good!
+            </div>
+            <div class="invalid-feedback">
+              Password is required!
+            </div>
+          </div>
+          <div class="mb-3">
+            <input type="checkbox" class="" id="">
+            <label class="" for="">Remember Me</label>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-danger" type="submit">Login</button>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label class="form-label">Password:</label>
-      <input class="form-input" type="password" id="password-input-login" />
-    </div>
-
-    <div class="form-group">
-      <button class="btn btn-danger" type="submit">LOGIN</button>
-     <button class="btn btn-danger" type="submit"><a href="/signup">Sign Up Instead</a>S</button> 
-    </div>
-
-  </form>
-  <br>
-  
+  </div>
 </div>
+
 <script src="/js/login.js"></script>
+<script src="/js/login-validate.js"></script>

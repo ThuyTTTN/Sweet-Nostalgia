@@ -1,3 +1,5 @@
+
+
 root {
     padding: 0;
     margin: 0;
@@ -74,3 +76,45 @@ h6 {
 .footer-bottom {
     color: #78bbeb;
 }
+
+.login-hero {
+    background-color: #e8e8f8;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 2%;
+}
+
+
+.signup-hero {
+    background-color: yellow;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 2%;
+}
+
+.terms {
+    color: blue;
+}
+
+#credit_card_logo {
+    width: 30px;
+    height: 30px;
+}
+
+/* .button-no-style {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #48565f;
+    font-size: 100%;
+    font-weight: bold;
+    transition: color .1s;
+    margin-left: 2px;
+  }
+  
+  .button-no-style:hover {
+    background: none;
+    color: #3486eb;
+  } */

@@ -1,0 +1,275 @@
+<div id="whole_page_div">
+        <form>
+            
+            <!-- "Credit Card Info" label -->
+            <div>
+                <label id="credit_card_info_label"> 
+                    Credit Card Info
+                </label>
+            </div>
+
+            <!-- Credit Card Number section -->
+            <div>
+                <div id="credit_card_left_space_div">
+                </div>
+    
+                <div id="credit_card_center_content_div">
+                    <div id="credit_card_input_div">
+                        <span id="left_input_addon">
+                            <img src="img/Blue_question_mark_icon.svg" id="credit_card_logo" title="Unknown" />
+                        </span>
+                        <input type="number" id="credit_card_number_input" pattern="[0-9]+" inputmode="numeric" onkeyup="identifyCreditCard()"
+                        alt="Enter credit card number here" title="Enter credit card number here" placeholder=" " />
+                    </div>
+                    
+                    <label for="credit_card_number_input" id="credit_card_label"> 
+                        Credit Card Number 
+                    </label>
+                    <label for="credit_card_label" id="invalid_credit_card_label">
+
+                    </label>
+                </div>
+
+                <div id="credit_card_right_space_div">
+                </div>
+            </div>
+
+            <!-- Expiration Date and CVV section -->
+            <div>
+                <div id="expiration_and_cvv_left_space_div">
+                </div>
+            
+                <div id="expiration_and_cvv_center_content_div">
+                    <div >
+                        <div name="expiration_date_div">
+                            
+                            <div>
+                                <select name="expiration_month_select" id="expiration_month_select">
+                                    <option> Month </option> 
+                                    <option> 1 </option>
+                                    <option> 2 </option>
+                                    <option> 3 </option>
+                                    <option> 4 </option>
+                                    <option> 5 </option>
+                                    <option> 6 </option>
+                                    <option> 7 </option>
+                                    <option> 8 </option>
+                                    <option> 9 </option>
+                                    <option> 10 </option>
+                                    <option> 11 </option>
+                                    <option> 12 </option>
+                                </select>
+                                <label for="expiration_month_select">
+                                    Expiration Month
+                                </label>
+                            </div>
+        
+                            <div>
+                                <select name="expiration_year_select" id="expiration_year_select"> 
+                                    <option> Year </option>
+                                    
+                                </select>
+            
+                                <label for="expiration_year_select">
+                                    Expiration Year
+                                </label>
+                            </div>
+                        </div> 
+        
+                        <div>
+                            <input type="number" pattern="[0-9]{3}" name="cvv_input" id="cvv_input" 
+                            alt="Enter the 3 or 4 digit security code on the back of your card"
+                            title="Enter the 3 or 4 digit security code on the back of your card" placeholder=" " />
+            
+                            <label for="cvv_input"> 
+                                CVV 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="expiration_and_cvv_right_space_div">
+                </div>
+            </div>
+    
+            <!-- "Billing Info" label -->
+            <div>
+                <label id="billing_info_label"> 
+                    Billing Info 
+                </label>
+            </div>
+
+            <!-- First and Last name section -->
+            <div>
+                <div id="name_left_space_div">
+                </div>
+            
+                <div id="name_center_content_div">
+                    <div>
+                        <div>
+                            <input type="text" name="first_name_input" id="first_name_input" 
+                            alt="Enter your first name" title="Enter your first name" placeholder=" " />
+        
+                            <label for="first_name_input"> 
+                                First name 
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" name="last_name_input" id="last_name_input" 
+                            alt="Enter your last name" title="Enter your last name" placeholder=" " />
+        
+                            <label for="last_name_input">
+                                Last name 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="name_right_space_div">
+                </div>
+            </div>
+
+            <!-- Address section -->
+            <div>
+                <div id="address_left_space_div">
+                </div>
+            
+                <div id="address_center_content_div">
+                    <div >
+                        <div>
+                            <input type="text" name="address_input" id="address_input" 
+                            alt="Enter your street address" title="Enter your street address" placeholder=" " />
+        
+                            <label for="address_input">
+                                Address
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" name="address_extra_input" id="address_extra_input" 
+                            alt="Enter any additional location information about your residence" placeholder=" " />
+        
+                            <label for="address_extra_input">
+                                Apt #, Suite, Floor (Optional)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="address_right_space_div">
+                </div>
+            </div>
+            
+            <!-- City, State, Zip Code section -->
+            <div>
+                <div id="location_left_space_div">
+                </div>
+            
+                <div id="location_center_content_div">
+                    <div >
+                        <div >
+                            <input type="text" name="city_input" id="city_input" 
+                            alt="Enter the name of your city" title="Enter the name of your city" placeholder=" " />
+        
+                            <label for="city_input">
+                                City
+                            </label>
+                        </div>
+                        <div>
+                            <select id="state_select"> 
+                                <option> Choose State </option>
+                                <option> AL </option>
+                                <option> AK  </option>
+                                <option> AZ </option>
+                                <option> AR </option>
+                                <option> CA </option>
+                                <option> CO </option>
+                                <option> CT </option>
+                                <option> DE </option>
+                                <option> FL </option>
+                                <option> GA </option>
+                                <option> HI </option>
+                                <option> ID </option>
+                                <option> IL </option>
+                                <option> IN </option>
+                                <option> IA </option>
+                                <option> KS </option>
+                                <option> KY </option>
+                                <option> LA </option>
+                                <option> ME </option>
+                                <option> MD </option>
+                                <option> MA </option>
+                                <option> MI </option>
+                                <option> MN </option>
+                                <option> MS </option>
+                                <option> MO </option>
+                                <option> MT </option>
+                                <option> NE </option>
+                                <option> NV </option>
+                                <option> NH </option>
+                                <option> NJ </option>
+                                <option> NM </option>
+                                <option> NY </option>
+                                <option> NC </option>
+                                <option> ND </option>
+                                <option> OH </option>
+                                <option> OK </option>
+                                <option> OR </option>
+                                <option> PA </option>
+                                <option> RI </option>
+                                <option> SC </option>
+                                <option> SD </option>
+                                <option> TN </option>
+                                <option> TX </option>
+                                <option> UT </option>
+                                <option> VT </option>
+                                <option> VA </option>
+                                <option> WA </option>
+                                <option> WV </option>
+                                <option> WI </option>
+                                <option> WY </option>
+                            </select>
+        
+                            <label for="state">
+                                State
+                            </label>
+                        </div>
+                        <div>
+                            <input type="number" name="zip_code_input" id="zip_code_input" 
+                            alt="Enter your 5 digit zip code" title="Enter your 5 digit zip code" placeholder=" " />
+        
+                            <label for="zip_code_input">
+                                Zip Code
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+
+            <div id="input_errors_labels_div">
+                <label id="dropdowns_error_label">
+                    
+                </label>
+
+                <label id="no_input_error_label">
+                    
+                </label>
+
+                <label id="invalid_input_error_label">
+                    
+                </label>
+            </div>
+
+            <div>
+                <div>
+                    <button type="button" id="submit_button">
+                        Submit
+                    </button>
+                </div>
+            </div>
+            
+        </form>
+</div>    
+
+<!-- JavaScript link -->
+<script src="/js/creditcard-validate.js"></script>

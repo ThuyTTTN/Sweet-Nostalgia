@@ -1,20 +1,28 @@
 // Modules required
-const  Candy  = require('../models/Candy');
+const Candy = require('../models/Candy');
 
 // variable to hold all the candy data
 const candyData = [
-    // expects key value pairs (candy_decade)
+    // expects key value pairs (candy_id)
     {
         // the decade of candy
-        category_decade: '70s',
+        candyDecade: '70s',
     },
     {
-        category_decade: '80s',
+        candyDecade: '80s',
     },
     {
-        category_decade: '90s',
-    }
-    // TODO: add wild card 
+        candyDecade: '90s',
+    },
+    // {
+    //     candyId: '1',
+    // },
+    // {
+    //     candyId: '2',
+    // },
+    // {
+    //     candyId: '3',
+    // }
 ];
 
 ///variable to hold all the candy for each user  in the candyData array

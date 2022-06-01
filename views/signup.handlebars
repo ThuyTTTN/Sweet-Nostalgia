@@ -1,0 +1,125 @@
+<div class="container">
+    <div class="row">
+        <div class="signup-hero p-3">
+            <h1>Craving something sweet. Give your sweet tooth exactly what it needs</h1>
+            <div class="signup-form">
+                <form class="row g-3 requires-validation" novalidate>
+
+                    <div class="col-md-12 pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" for="first-input-signup last-input-signup">First and last
+                                name</span>
+                            <input type="name" class="form-control" id="first-input-signup" placeholder="Toby" required>
+                            <input type="name" class="form-control" id="last-input-signup" placeholder="Flenderson"
+                                required>
+                            <div class="invalid-feedback">
+                                First and last name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="address-input-signup" class="form-label">Address:</label>
+                        <input type="address" class="form-control" id="address-input-signup"
+                            placeholder="1234 Dunder Mifflin Paper Company" required>
+                        <div class="valid-feedback">
+                            Address looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Addres is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="city-input-signup" class="form-label">City:</label>
+                        <input type="city" class="form-control" id="city-input-signup" placeholder="Scranton" required>
+                        <div class="valid-feedback">
+                            City looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            City is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="state-input-signup" class="form-label">State:</label>
+                        <select id="state-input-signup" class="form-select" required>
+                            <option hidden></option>
+                            <option>Florida</option>
+                            <option>California</option>
+                            <option>New York</option>
+                        </select>
+                        <div class="valid-feedback">
+                            State looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            State is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="zip-input-signup" class="form-label">ZipCode:</label>
+                        <input type="zipcode" class="form-control" id="zip-input-signup" placeholder="12234" required>
+                        <div class="valid-feedback">
+                            ZipCode looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            ZipCode is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="email-input-signup" class="form-label">Email:</label>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="email-input-signup"
+                                placeholder="ScrantonStranger@gmail.com" required>
+                            <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            <div class="valid-feedback">
+                                Email looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Email is required!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="password-input-signup" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="password-input-signup"
+                            placeholder="HeisInnocent1@" required>
+                        <div id="passwordHelpBlock" class="form-text ">
+                            Your password must be 8-20 characters long, contain letters, numbers, special characters and
+                            must not
+                            contain spaces or emoji's.
+                        </div>
+                        <div class="valid-feedback">
+                            Password looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Password is required!
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                <span style="color:black;">Agree To</span>
+                               <a class="terms" href="https://termly.io/resources/templates/terms-and-conditions-template/">terms and conditions</a>
+                            </label>
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-danger" type="submit">Get Sweets Today</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/signup.js"></script>
+<script src="/js/signup-validate.js"></script>
