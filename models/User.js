@@ -98,7 +98,7 @@ User.init(
     candy_id: {
       type: DataTypes.INTEGER,
       // allowNull: false,
-      foreignKey: true,
+      // foreignKey: true,
     },
   },
   {

@@ -12,7 +12,7 @@ const userData = [
     city: "Itasca",
     state: "Illinois",
     zipCode: "60143",
-    candy_id: "1"
+    candy_id: 1
   },
   {
     first_name: "Jolly",
@@ -23,8 +23,7 @@ const userData = [
     city: "Orlando",
     state: "Florida",
     zipCode: "32836",
-
-    candy_id: "2"
+    candy_id: 2
 
   },
    {
@@ -36,7 +35,7 @@ const userData = [
     city: "Orlando",
     state: "Florida",
     zipCode: "32801",
-    candy_id: "3"
+    candy_id: 3
   },
   {
     first_name: "Mister",
@@ -47,7 +46,7 @@ const userData = [
     city: "Orlando",
     state: "Florida",
     zipCode: "32828",
-    candy_id: "1"
+    candy_id: 1
   },
   {
     first_name: "Hans",
@@ -58,7 +57,7 @@ const userData = [
     city: "Orlando",
     state: "Florida",
     zipCode: "32803",
-    candy_id: "2"
+    candy_id: 2
   },
   {
     first_name: "Gob",
@@ -69,7 +68,7 @@ const userData = [
     city: "Orlando",
     state: "Florida",
     zipCode: "32806",
-    candy_id: "3"
+    candy_id: 3
   },
 
 ];

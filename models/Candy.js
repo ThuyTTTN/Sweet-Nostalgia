@@ -18,18 +18,6 @@ Candy.init({
     // auto increments the id by 1
     autoIncrement: true,
   },
-
-  // defines the category_decade column
-  // category_decade: {
-  //   // defines type of data in the column
-  //   type: DataTypes.STRING,
-  //   // does not allow value to be empty
-  //   allowNull: false,
-  // },
-  // candyId: {
-  //   type: DataTypes.INTEGER,
-  //   allowNull: false,
-  // },
   candyDecade: {
     type: DataTypes.STRING,
     allowNull: false,
