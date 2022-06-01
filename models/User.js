@@ -25,6 +25,7 @@ User.init(
       // auto increments the id by 1
       autoIncrement: true,
     },
+
     // defines the first_name column
     first_name: {
       // defines type of data in the column

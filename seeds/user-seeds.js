@@ -23,7 +23,9 @@ const userData = [
     city: "Orlando",
     state: "Florida",
     zipCode: "32836",
+
     candy_id: "2"
+
   },
    {
     first_name: "Pixy",
@@ -69,6 +71,7 @@ const userData = [
     zipCode: "32806",
     candy_id: "3"
   },
+
 ];
 
 const seedUsers = () => User.bulkCreate(userData, {individualHooks: true});

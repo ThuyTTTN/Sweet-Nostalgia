@@ -23,7 +23,7 @@ const candyData = [
     // {
     //     candyId: '3',
     // }
-];
+
 
 ///variable to hold all the candy for each user  in the candyData array
 const seedCandy = () => Candy.bulkCreate(candyData);
