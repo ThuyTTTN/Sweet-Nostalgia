@@ -3,14 +3,27 @@ const Candy = require('../models/Candy');
 
 // variable to hold all the candy data
 const candyData = [
-    // expects key value pairs (candy_decade)
+    // expects key value pairs (candy_id)
     {
         // the decade of candy
-        candy_70s: 1,
-        candy_80s: 2,
-        candy_90s: 3,
+        candyDecade: '70s',
     },
-];
+    {
+        candyDecade: '80s',
+    },
+    {
+        candyDecade: '90s',
+    },
+    // {
+    //     candyId: '1',
+    // },
+    // {
+    //     candyId: '2',
+    // },
+    // {
+    //     candyId: '3',
+    // }
+
 
 ///variable to hold all the candy for each user  in the candyData array
 const seedCandy = () => Candy.bulkCreate(candyData);

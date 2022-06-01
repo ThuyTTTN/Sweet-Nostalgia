@@ -18,27 +18,23 @@ Candy.init({
     // auto increments the id by 1
     autoIncrement: true,
   },
-  // defines the 70s column
-  candy_70s: {
-    // defines type of data in the column
-    type: DataTypes.INTEGER,
-    // does not allow value to be empty
 
+  // defines the category_decade column
+  // category_decade: {
+  //   // defines type of data in the column
+  //   type: DataTypes.STRING,
+  //   // does not allow value to be empty
+  //   allowNull: false,
+  // },
+  // candyId: {
+  //   type: DataTypes.INTEGER,
+  //   allowNull: false,
+  // },
+  candyDecade: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
-  // defines the 80s column
-  candy_80s: {
-    // defines type of data in the column
-    type: DataTypes.INTEGER,
-    // does not allow value to be empty
 
-  },
-  // defines the 90s column
-  candy_90s: {
-    // defines type of data in the column
-    type: DataTypes.INTEGER,
-    // does not allow value to be empty
-
-  }
 }, {
   sequelize,
   // the purpose of timestamp is to automatically add the created_at and updated_at columns to the table
