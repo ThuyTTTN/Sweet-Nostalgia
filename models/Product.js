@@ -18,14 +18,14 @@ Product.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-  candy_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    reference: {
-      model: "candy",
-      key: "id",
-    },
-  },
+  // user_id: {
+  //   type: DataTypes.INTEGER,
+  //   foreignKey: true,
+  //   references: {
+  //     model: "user",
+  //     key: "id", 
+  //   },
+  // },
 },
 {
   sequelize,

@@ -95,11 +95,15 @@ User.init(
       // does not allow value to be empty
       allowNull: false,
     },
-    candy_id: {
-      type: DataTypes.INTEGER,
-      // allowNull: false,
-      foreignKey: true,
-    },
+  //   candy_id: {
+  //     type: DataTypes.INTEGER,
+  //     // allowNull: false,
+  //     foreignKey: true,
+  //     reference: {
+  //       model: "candy",
+  //       key: "id",
+  //   },
+  // },
   },
   {
     // the purpose of the hooks is to do something before or after the model method is run

@@ -9,25 +9,44 @@ const Product = require('./Product');
 // *this worked at one point here
 // create associations
 
-User.belongsTo(Candy, {
-    foreignKey: 'candy_id'
-});
 
-Candy.hasMany(User, {
-    foreignKey: 'candy_id'
-});
+User.hasMany(Candy);
 
-Product.belongsTo(Candy, {
-    foreignKey: 'candy_id'
-})
+Candy.belongsTo(User);
 
-Candy.hasMany(Product, {
-    foreignKey: 'candy_id'
-})
+Candy.hasMany(Product);
 
-User.hasMany(Product, {
-    foreignKey: 'candy_id'
-})
+Candy.belongsTo(Product);
+
+User.hasMany(Product);
+
+Product.belongsTo(User);
+
+Product.hasMany(Candy);
+
+Candy.belongsTo(Product);
+
+
+
+
+
+
+
+
+
+
+
+// Candy.belongsToMany(User, { 
+//     through: Candy,
+//     foreignKey: 'product_id',
+// });
+
+// Candy.belongsToMany(Product, { 
+//     through: User,
+//     foreignKey: 'user_id',
+//  });
+
+
 
 module.exports = { User, Candy, Product };
 
