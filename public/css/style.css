@@ -101,6 +101,19 @@ h6 {
     height: 30px;
 }
 
+.subscription-hero {
+    background-color: #38d677;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 2%;
+}
+
+.subscription-card-image {
+    width: 50%;
+    height: 60%;
+    border-radius: 8%;
+}
+
 /* .button-no-style {
     background: none;
     border: none;
