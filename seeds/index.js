@@ -1,25 +1,28 @@
-//modules
-const seedUsers = require('./user-seeds');
-const seedCandy = require('./candy-seeds');
-const seedProducts = require('./product-seeds');
+const seedCandies = require('./candies-seeds');
+const seedCandyBox = require('./candybox-seeds');
+const seedSubscription = require('./subscription-seeds');
+const seedUsers = require('./users-seeds');
+
 const sequelize = require('../config/connection');
 
-//create a variable to hold all seeds
 const seedAll = async () => {
-    await sequelize.sync({ force: true });
-    console.log('\n----- DATABASE SYNCED -----\n')
+  await sequelize.sync({ force: true });
+  console.log('\n----- DATABASE SYNCED -----\n');
 
-    await seedUsers();
-    console.log('\n----- USERS SEEDED -----\n')
+  await seedCandyBox();
+  console.log('\n----- CANDYBOX SEEDED -----\n');
+  
+  await seedCandies();
+  console.log('\n----- CANDIES SEEDED -----\n');
 
-    await seedCandy();
-    console.log('\n----- CANDIES SEEDED -----\n')
 
-    await seedProducts();
-    console.log('\n-----PRODUCTS SEEDED -----\n')
+  await seedUsers();
+  console.log('\n----- USERS SEEDED -----\n');
 
-    process.exit(0);
-}
+  await seedSubscription();
+  console.log('\n----- SUBSCRIPTION SEEDED -----\n');
 
-//run seedAll function
+  process.exit(0);
+};
+
 seedAll();
