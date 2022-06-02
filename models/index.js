@@ -1,33 +1,42 @@
+// import models
+const CandyBox = require('./CandyBox');
+const Candies = require('./Candies');
+const Users = require('./Users');
+const Subscription = require('./Subscription');
 
-// modules to require   *****Added Product 
-const User = require('./User');
-const Candy = require('./Candy');
-const Product = require('./Product');
 
+// Products belongsTo Category
+// CandyBox.belongsTo(Candies, {
+//   foreignKey: 'candies_id'
+// });
+// // Categories have many Products
+// Candies.hasMany(CandyBox, {
+//   foreignKey: 'candies_id'
+// });
+Candies.belongsTo(CandyBox, {
+  foreignKey: 'candybox_id'
+})
+CandyBox.hasMany(Candies, {
+  foreignKey: 'candybox_id'
+})
 
-
-// *this worked at one point here
-// create associations
-
-User.belongsTo(Candy, {
-    foreignKey: 'candy_id'
+// Products belongToMany Tags (through ProductTag)
+CandyBox.belongsToMany(Users, {
+  through: Subscription,
+  foreignKey: 'candybox_id',
+  onUpdate: 'cascade',
+  onDelete: 'set null'
+});
+// Tags belongToMany Products (through ProductTag)
+Users.belongsToMany(CandyBox, {
+  through: Subscription,
+  foreignKey: 'users_id',
 });
 
-Candy.hasMany(User, {
-    foreignKey: 'candy_id'
-});
+module.exports = {
+  CandyBox,
+  Candies,
+  Users,
+  Subscription
 
-Product.belongsTo(Candy, {
-    foreignKey: 'candy_id'
-})
-
-Candy.hasMany(Product, {
-    foreignKey: 'candy_id'
-})
-
-User.hasMany(Product, {
-    foreignKey: 'candy_id'
-})
-
-module.exports = { User, Candy, Product };
-
+};

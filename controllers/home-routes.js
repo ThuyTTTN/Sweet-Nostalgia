@@ -1,6 +1,5 @@
 // modules required for routing
 const router = require('express').Router();
-// const { User, Candy } = require('../models');
 
 
 // GET signup page

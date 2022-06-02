@@ -1,6 +1,6 @@
 // Modules
 const router = require('express').Router();
-const { User, Candy } = require('../models');
+const { Users, Candies, CandyBox, Subscription } = require('../models');
 const withAuth = require('../utils/auth');
 
 
