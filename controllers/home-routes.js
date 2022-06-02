@@ -30,4 +30,9 @@ router.get('/', (req, res) => { // anyone can access this page
     res.render('homepage', {loggedIn: req.session.loggedIn});
 });
 
+router.get('/themes', (req,res)=>{
+
+  res.render('themes',{loggedIn : req.session.loggedIn})
+})
+
 module.exports = router;
