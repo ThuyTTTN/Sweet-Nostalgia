@@ -1,6 +1,6 @@
 // Modules to require
 const router = require('express').Router();
-const { Candy, User } = require('../../models');
+const { Candy, User, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET request to find all candies
@@ -14,7 +14,11 @@ router.get('/', (req, res) => {
                 model: User,
                 // the atribbutes are the columns we want to return for the user that subscribed to the candy
                 attributes: ['id', 'email', 'first_name', 'last_name',]
-            }
+            },
+            {
+                model: Product,
+                attributes: ['id', 'product_name', 'candy_id']
+              }
         ]
     })
     // send the response back to the client
