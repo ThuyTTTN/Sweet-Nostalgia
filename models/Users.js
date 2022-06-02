@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 const bcrypt = require("bcrypt");
 
 //create our user model
-class User extends Model {
+class Users extends Model {
   //  the method that will hash the password
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
@@ -12,7 +12,7 @@ class User extends Model {
 }
 
 //define table columns and configuration
-User.init(
+Users.init(
   {
     // defines id column
     id: {
@@ -95,11 +95,6 @@ User.init(
       // does not allow value to be empty
       allowNull: false,
     },
-    candy_id: {
-      type: DataTypes.INTEGER,
-      // allowNull: false,
-      foreignKey: true,
-    },
   },
   {
     // the purpose of the hooks is to do something before or after the model method is run
@@ -127,8 +122,8 @@ User.init(
     // the purpose of the underscored is to make the table name lowercase and use underscores instead of camelCase
     underscore: true,
     // the purpose of the modelName is to change the name of the table to the name of the model
-    modelName: "user",
+    modelName: "users",
   }
 );
 
-module.exports = User;
+module.exports = Users;

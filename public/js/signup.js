@@ -35,7 +35,7 @@ async function signupFormHandles(event) {
         // check the response status
         if (response.ok) {
             //  if the response is ok we send the response to the client and we redirect to the dashboard page
-            document.location.replace('/dashboard');
+            document.location.replace('/subscription');
         } else {
             alert('Faliure to sign up :(');
         }
