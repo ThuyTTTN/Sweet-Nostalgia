@@ -3,13 +3,13 @@ async function editFormHandler(event) {
     //  preventDefault method prevents the form from submitting
     event.preventDefualt();
 
-    const  first_name = document.querySelector('#firstName').value;
-    const  last_name = document.querySelector('#lastName').value;
-    const  email = document.querySelector('#email').value;
-    const address = document.querySelector('#address').value;
-    const city = document.querySelector('#city').value;
-    const state = document.querySelector('#state').value;
-    const zipCode = document.querySelector('#zipCode').value;
+    const  first_name = document.querySelector('#edit-first-name').value;
+    const  last_name = document.querySelector('#edit-last-name').value;
+    const  email = document.querySelector('#edit-email').value;
+    const address = document.querySelector('#edit-address').value;
+    const city = document.querySelector('#edit-city').value;
+    const state = document.querySelector('#edit-state').value;
+    const zipCode = document.querySelector('#edit-zipCode').value;
 
     // variable for teh id of the user using the url
     const id = window.location.toString().split('/')
