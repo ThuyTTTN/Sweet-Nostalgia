@@ -1,11 +1,6 @@
 // Modules
 const router = require('express').Router();
-const {
-    Users,
-    Candies,
-    CandyBox,
-    Subscription
-} = require('../models');
+const { Users, Candies, CandyBox, Subscription } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -25,9 +20,7 @@ router.get('/', withAuth, (req, res) => {
             ], 
         })
         .then(dbUserData => {
-            const user = dbUserData.map(users => users.get({
-                plain: true
-            }));
+            const user = dbUserData.map(users => users.get({ plain: true }));
             res.render('dashboard', { user, loggedIn: true});
         })
         .catch(err => {
@@ -67,12 +60,16 @@ router.get('/', withAuth, (req, res) => {
 //     });
 // });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+// router.get('/edit', (req, res) => {
+//     res.render('editprofile');
+// })
+
+router.get('/edit/', withAuth, (req, res) => {
     // access the candel model to find a single candy
     Users.findOne({
             // find the candy for the user by id
             where: {
-                id: req.params.id
+                id: req.session.users
             },
             attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
             // include the candy model
@@ -83,6 +80,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
         })
         // send the response back to the client
         .then(dbUserData => {
+            console.log(req.session.id)
+            console.log(dbUserData)
             if (!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id'});
                 return;
@@ -91,7 +90,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             const users = dbUserData.get({ plain: true});
             console.log(users);
             console.log(dbUserData)
-            res.render('edit-profile', { users, loggedIn: true });
+            res.render('editprofile', { users, loggedIn: true });
             console.log(dbUserData)
         })
         // catch any errors
