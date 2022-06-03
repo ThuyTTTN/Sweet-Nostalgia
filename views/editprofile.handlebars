@@ -55,13 +55,11 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label for="state-input-signup" class="form-label">State:</label>
-                        <select id="state-input-signup" class="form-select" required>
-                            <option hidden></option>
-                            <option>Florida</option>
-                            <option>California</option>
-                            <option>New York</option>
-                        </select>
+                        <label for="edit-state" class="form-label">State:</label>
+                        <input type="state" id="edit-state" class="form-control" value="{{users.state}}" required>
+                           <div id="state-helper" class="form-text ">
+                            Input your state's abbreviation (ex. CA)
+                        </div>
                         <div class="valid-feedback">
                             State looks good!
                         </div>
