@@ -48,14 +48,12 @@ router.get('/edit/:id', withAuth, (req, res) => {
         where: {
             // the id is in the user
             id: req.params.id
-        } 
+        }
     })
     // send the response back to the client
     .then(dbUserData => { 
-        const user = dbUserData.get({ plain: true });
-        res.render('edit-profile', {
-            users: user
-        })
+        const users = dbUserData.get({ plain: true });
+        res.render('edit-profile', { users, loggedIn: true });
     })
     // catch any errors
     .catch(err => {
