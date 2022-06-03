@@ -30,6 +30,11 @@ async function editFormHandler(event) {
         headers: { 'Content-Type': 'application/json' },
     });
 
-   
+    if (response.ok) {
+        document.location.replace('/dashboard');
+    } else {
+        alert(response.statusText);
+    }
 }
 
+document.querySelector('#edit-profile-form').addEventListener('submit', editFormHandler);
