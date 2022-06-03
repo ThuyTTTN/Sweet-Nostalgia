@@ -96,11 +96,10 @@ router.post('/', (req, res) => {
 //     });
 // });
 
-
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Users.update(req.body, {
-    individualHooks: true,
+    individualHooks: true, 
       where: {
         id: req.params.id
       }
@@ -117,6 +116,30 @@ router.put('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+//! ==============Routers that updates a user's data on the live site START ============== */
+router.put('/', withAuth, (req, res) => {
+  // update a tag's name by its `id` value
+  Users.update(req.body, {
+    individualHooks: true, 
+      where: {
+        id: req.session.users
+      }
+    })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No user found with this id' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//! ==============Routers that updates a user's data on the live site END ============== */
 
 
 

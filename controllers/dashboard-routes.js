@@ -80,18 +80,12 @@ router.get('/edit/', withAuth, (req, res) => {
         })
         // send the response back to the client
         .then(dbUserData => {
-            console.log(req.session.id)
-            console.log(dbUserData)
             if (!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id'});
                 return;
             }
-            console.log(dbUserData);
             const users = dbUserData.get({ plain: true});
-            console.log(users);
-            console.log(dbUserData)
             res.render('editprofile', { users, loggedIn: true });
-            console.log(dbUserData)
         })
         // catch any errors
         .catch(err => {
