@@ -97,7 +97,7 @@ router.post('/', (req, res) => {
 // });
 
 
-router.put('/:id', withAuth, (req, res) => {
+router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Users.update(req.body, {
     individualHooks: true,
@@ -107,7 +107,7 @@ router.put('/:id', withAuth, (req, res) => {
     })
     .then(dbUserData => {
       if (!dbUserData[0]) {
-        res.status(404).json({ message: 'No tag found with this id' });
+        res.status(404).json({ message: 'No user found with this id' });
         return;
       }
       res.json(dbUserData);

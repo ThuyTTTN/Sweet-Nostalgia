@@ -14,24 +14,21 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
     Users.findAll({
             where: {
-                email: req.session.email
+                id: req.session.id
             },
             attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
-            // include: [
-            //     {
-            //         model: CandyBox,
-            //         attributes: ['id', 'decade', 'price', 'stock',],
-            //     }
-            // ], 
+            include: [
+                {
+                    model: CandyBox,
+                    attributes: ['id', 'decade', 'price', 'stock',],
+                }
+            ], 
         })
         .then(dbUserData => {
             const user = dbUserData.map(users => users.get({
                 plain: true
             }));
-            res.render('dashboard', {
-                user,
-                loggedIn: true
-            });
+            res.render('dashboard', { user, loggedIn: true});
         })
         .catch(err => {
             console.log(err);
@@ -77,31 +74,24 @@ router.get('/edit/:id', withAuth, (req, res) => {
             where: {
                 id: req.params.id
             },
+            attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
             // include the candy model
-            include: [{
-                model: CandyBox,
-                attributes: ['id', 'decade', 'price', 'stock', ],
-            }]
+            // include: [{
+            //     model: CandyBox,
+            //     attributes: ['id', 'decade', 'price', 'stock', ],
+            // }]
         })
         // send the response back to the client
         .then(dbUserData => {
-
             if (!dbUserData) {
-                res.status(404).json({
-                    message: 'No user found with this id'
-                });
+                res.status(404).json({ message: 'No user found with this id'});
                 return;
             }
             console.log(dbUserData);
-            const users = dbUserData.get({
-                plain: true
-            });
+            const users = dbUserData.get({ plain: true});
             console.log(users);
             console.log(dbUserData)
-            res.render('edit-profile', {
-                users,
-                loggedIn: true
-            });
+            res.render('edit-profile', { users, loggedIn: true });
             console.log(dbUserData)
         })
         // catch any errors
