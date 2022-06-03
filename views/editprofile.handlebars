@@ -19,8 +19,31 @@
                         </div>
                     </div>
 
+                     <div class="col-md-12">
+                        <label for="edit-first-name" class="form-label">First name:</label>
+                        <input type="address" class="form-control" id="edit-first-name" value="{{users.first_name}}" required>
+                        <div class="valid-feedback text-info">
+                            Address looks good!
+                        </div>
+                        <div class="invalid-feedback text-warning">
+                            Addres is required!
+                        </div>
+                    </div>
 
-                    <div class="col-md-12 pt-3">
+                    <div class="col-md-12">
+                        <label for="edit-last-name" class="form-label">Last Name:</label>
+                        <input type="address" class="form-control" id="edit-last-name" value="{{users.last_name}}" required>
+                        <div class="valid-feedback text-info">
+                            Address looks good!
+                        </div>
+                        <div class="invalid-feedback text-warning">
+                            Addres is required!
+                        </div>
+                    </div>
+
+
+
+                    {{!-- <div class="col-md-12 pt-3">
                         <div class="input-group">
                             <span class="input-group-text" for="edit-first name edit-last-name">First and last
                                 name</span>
@@ -30,7 +53,7 @@
                                 First and last name is required
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-md-12">
                         <label for="edit-address" class="form-label">Address:</label>
