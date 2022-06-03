@@ -13,8 +13,7 @@ async function editFormHandler(event) {
 
 
     // variable for teh id of the user using the url
-    const id = window.location.toString().split('/')
-    [window.location.toString().split('/').length - 1];
+    const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
     const response = await fetch(`/api/users/${id}`, {
         method: 'put',
