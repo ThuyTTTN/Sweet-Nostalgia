@@ -73,10 +73,10 @@ router.get('/edit/', withAuth, (req, res) => {
             },
             attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
             // include the candy model
-            // include: [{
-            //     model: CandyBox,
-            //     attributes: ['id', 'decade', 'price', 'stock', ],
-            // }]
+            include: [{
+                model: CandyBox,
+                attributes: ['id', 'decade', 'price', 'stock', ],
+            }]
         })
         // send the response back to the client
         .then(dbUserData => {
@@ -86,6 +86,36 @@ router.get('/edit/', withAuth, (req, res) => {
             }
             const users = dbUserData.get({ plain: true});
             res.render('editprofile', { users, loggedIn: true });
+        })
+        // catch any errors
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/password/', withAuth, (req, res) => {
+    // access the candel model to find a single candy
+    Users.findOne({
+            // find the candy for the user by id
+            where: {
+                id: req.session.users
+            },
+            attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
+            // include the candy model
+            include: [{
+                model: CandyBox,
+                attributes: ['id', 'decade', 'price', 'stock', ],
+            }]
+        })
+        // send the response back to the client
+        .then(dbUserData => {
+            if (!dbUserData) {
+                res.status(404).json({ message: 'No user found with this id'});
+                return;
+            }
+            const users = dbUserData.get({ plain: true});
+            res.render('password', { users, loggedIn: true });
         })
         // catch any errors
         .catch(err => {
