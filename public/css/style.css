@@ -114,16 +114,20 @@ h6 {
     border-radius: 8%;
 }
 
-.theme-hero-1
-.theme-hero-2
+.theme-hero-1,
+.theme-hero-2,
 .theme-hero-3 {
     margin-bottom: 10%;
     margin-top: 10%;
-    border-radius: 2%;
+    border-radius: 1%;
+}
+ 
+.theme-title-heading {
+    background-color: rgba(140, 34, 240, 0.559);
 }
 
 .theme-hero-1 {
-    background-color: rgba(231, 173, 245, 0.308);
+    background-color: #f9f641;
 }
 
 .theme-hero-2 {
@@ -131,8 +135,19 @@ h6 {
 }
 
 .theme-hero-3 {
-    background-color: #e8e8f8;
+    background-color: #ef7373;
 }
+
+
+#text-responsive {
+    font-size: calc(10% + 1vw + 1vh);
+  }
+
+  #theme-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8%;
+  }
 
 /* .button-no-style {
     background: none;
