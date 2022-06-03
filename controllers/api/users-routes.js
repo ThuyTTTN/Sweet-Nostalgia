@@ -96,56 +96,29 @@ router.post('/', (req, res) => {
 //     });
 // });
 
-// ! working put request
-// router.put('/:id', withAuth, (req, res) => {
-//   // update a tag's name by its `id` value
-//   Users.update(req.body, {
-//       where: {
-//         id: req.params.id
-//       }
-//     })
-//     .then(dbTagData => {
-//       if (!dbTagData[0]) {
-//         res.status(404).json({ message: 'No tag found with this id' });
-//         return;
-//       }
-//       res.json(dbTagData);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json(err);
-//     });
-// });
 
-// ! old put request, but trying to get it to work
 router.put('/:id', withAuth, (req, res) => {
-  // access the User model to find a single user
-  Users.findOne({
-          // find the user by id
-          where: {
-              id: req.params.id
-          }
-      })
-      // update the user with the new data
-      .then(dbUserData => {
-          // if there is no user with the id  we send a 404 status
-          if (!dbUserData) {
-              res.status(404).json({
-                  message: 'No user found with this id'
-              });
-              return;
-          }
-          // if there is a user with the id we update the user with the new data
-          return dbUserData.update(req.body);
-      })
-      // send the response back to the client
-      .then(dbUserData => res.json(dbUserData))
-      // catch any errors
-      .catch(err => {
-          console.log(err);
-          res.status(500).json(err);
-      });
+  // update a tag's name by its `id` value
+  Users.update(req.body, {
+    individualHooks: true,
+      where: {
+        id: req.params.id
+      }
+    })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No tag found with this id' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
+
+
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value

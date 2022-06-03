@@ -1,7 +1,7 @@
 // a syncrhonous function to get the user's profile
 async function editFormHandler(event) {
     //  preventDefault method prevents the form from submitting
-    event.preventDefualt();
+    event.preventDefault();
 
     const  first_name = document.querySelector('#edit-first-name').value;
     const  last_name = document.querySelector('#edit-last-name').value;
@@ -38,4 +38,4 @@ async function editFormHandler(event) {
     }
 }
 
-document.querySelector('#edit-profile-form').addEventListener('submit', editFormHandler);
+document.querySelector('.edit-profile-form').addEventListener('submit', editFormHandler);
