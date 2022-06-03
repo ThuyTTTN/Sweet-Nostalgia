@@ -2,8 +2,95 @@
     <h1 class="mb-5">Edit Account Information</h1>
     <div class="row">
         <div class="edit-profile-form">
-            <form class="row g-3">
+                <form class="row g-3 requires-validation" novalidate>
 
+
+                             <div class="col-md-6">
+                        <label for="edit-email" class="form-label">Email:</label>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="edit-email" value="{{users.email}}" required>
+                            <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            <div class="valid-feedback">
+                                Email looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Email is required!
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" for="edit-first name edit-last-name">First and last
+                                name</span>
+                            <input type="name" class="form-control" id="edit-first-name" value="{{users.first_name}}" required>
+                            <input type="name" class="form-control" id="edit-last-name" value="{{users.last_name}}" required>
+                            <div class="invalid-feedback">
+                                First and last name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label for="edit-address" class="form-label">Address:</label>
+                        <input type="address" class="form-control" id="edit-address" value="{{users.address}}" required>
+                        <div class="valid-feedback">
+                            Address looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Addres is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="edit-city" class="form-label">City:</label>
+                        <input type="city" class="form-control" id="edit-city" value="{{users.city}}" required>
+                        <div class="valid-feedback">
+                            City looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            City is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="state-input-signup" class="form-label">State:</label>
+                        <select id="state-input-signup" class="form-select" required>
+                            <option hidden></option>
+                            <option>Florida</option>
+                            <option>California</option>
+                            <option>New York</option>
+                        </select>
+                        <div class="valid-feedback">
+                            State looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            State is required!
+                        </div>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="zip-input-signup" class="form-label">ZipCode:</label>
+                        <input type="zipcode" class="form-control" id="zip-input-signup" placeholder="12234" required>
+                        <div class="valid-feedback">
+                            ZipCode looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            ZipCode is required!
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-info" type="submit">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+            {{!-- <form class="row g-3">
                 <div class="col-md-6 pt-3">
                     <label for="first_name" class="form-label">First Name:</label>
                     <input type="text" class="form-control" id="edit-first-name" placeholder="{{users.first_name}}">
@@ -11,7 +98,7 @@
 
                 <div class="col-md-6 pt-3">
                     <label for="last_name" class="form-label">Last Name:</label>
-                    <input type="text" class="form-control" id="edit-last-name" placeholder="{{users.last_name}}">
+                    <input type="text" class="form-control" id="edit-last-name" value="{{users.last_name}}"></input>
                 </div>
 
                 <div class="col-md-6 pt-3">
@@ -45,7 +132,7 @@
 
             </form>
 
-        </div>
+        </div> --}}
     </div>
 </div>
 
