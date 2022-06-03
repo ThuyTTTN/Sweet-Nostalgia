@@ -8,12 +8,12 @@ router.get('/', (req, res) => {
   // find all tags
   Users.findAll({
       // be sure to include its associated Product data
-        include: [
-          {
-            model: CandyBox,
-            attributes: ['id', 'decade', 'price', 'stock',],
-          }
-        ]
+        // include: [
+        //   {
+        //     model: CandyBox,
+        //     attributes: ['id', 'decade', 'price', 'stock',],
+        //   }
+        // ]
   })
     .then(dbTagData => res.json(dbTagData))
     .catch(err => {
@@ -73,7 +73,7 @@ router.post('/', (req, res) => {
       // save the session before sending the response
       req.session.save(() => {
           // set the session user_id to the user id of the user we just created
-          req.session.id = dbUserData.id;
+          req.session.users_id = dbUserData.id;
           // set teh session email to the email of the user we just created
           req.session.email = dbUserData.email;
           // the purpose of session.loggedIn is to check if the user is logged in or not

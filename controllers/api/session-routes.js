@@ -24,18 +24,13 @@ const { Users} = require("../../models");
         }
           // set up session if the password is correct
           req.session.save(() => {
-            req.session.users = dbUserData.id;
+            req.session.users_id = dbUserData.id;
             // set the session username to the username of the user who is logging in
             req.session.email = dbUserData.email,
             // the purpose of session.loggedIn is to check if the user is logged in or not
             req.session.loggedIn = true,
             // send the response with the user data
-            console.log(req.session); 
-            console.log(req.session.loggedIn);
-            console.log(req.session.user);
-            console.log(dbUserData.id)
-            console.log(req.session.email)
-            console.log(dbUserData)
+
     res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
 });

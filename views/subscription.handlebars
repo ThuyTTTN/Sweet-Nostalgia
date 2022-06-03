@@ -4,9 +4,10 @@
         <div class="row">
 
             <div class="col-md-4 pt-2 pb-2">
-                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark">
+                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark" id="btn-70" >
                     <div class="subscription-card">
-                        <div class="subscription-card-header">
+                        <input type="hidden" id="sub70" value="1"/>
+                        <div class="subscription-card-header" >
                             <h3>70s Candy Box</h3>
                         </div>
                         <div class="subscription-card-body">
@@ -18,8 +19,9 @@
             </div>
 
                <div class="col-md-4 pt-2 pb-2">
-                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark">
+                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark" value="2" id="btn-80">
                     <div class="subscription-card">
+                        <input type="hidden" id="sub80" value="2"/>
                         <div class="subscription-card-header">
                             <h3>80s Candy Box</h3>
                         </div>
@@ -32,8 +34,9 @@
             </div>
 
                <div class="col-md-4 pt-2 pb-2">
-                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark">
+                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark" value="3" id="btn-90">
                     <div class="subscription-card">
+                        <input type="hidden" id="sub90" value="3"/>
                         <div class="subscription-card-header">
                             <h3>90s Candy Box</h3>
                         </div>
@@ -58,18 +61,20 @@
 {{!-- end of container --}}
 
 
-{{!-- container to hold subscription option --}}
+{{!-- container to hold subscription option --}} 
 
 {{!-- <div class="row">
     <div class="col-4">
-        <button type="button" class="btn btn-primary btn-lg">70s Candies Box</button>
+        <button id="btn-70" type="button" class="btn btn-primary btn-lg">70s Candies Box</button>
     </div>
     <div class="col-4">
-        <button type="button" class="btn btn-primary btn-lg">80s Candies Box</button>
+        <button id="btn-80" type="button" class="btn btn-primary btn-lg">80s Candies Box</button>
     </div>
     <div class="col-4">
-        <button type="button" class="btn btn-primary btn-lg">90s Candies Box</button>
+        <button id="btn-90" type="button" class="btn btn-primary btn-lg">90s Candies Box</button>
     </div>
-</div>
-</div>
 </div> --}}
+{{!-- </div>
+</div> --}}
+
+<script src="/js/subscription.js"></script>

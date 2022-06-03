@@ -39,9 +39,12 @@ router.get('/:id', (req, res) => {
 // POST new subscription
 router.post('/', (req, res) => {
     // create a new subscription
+    console.log(req.session.users_id)
     Subscription.create({
-        users_id: req.body.users_id,
-        candybox_id: req.body.candybox_id
+        // req.body means passing everything from frontend
+        ...req.body,
+        users_id: req.session.users_id,
+      
     })
         .then((subscription) => {
             res.json(subscription);

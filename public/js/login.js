@@ -11,7 +11,7 @@ const loginFormHandles = async function (event) {
     // if the email and password are not empty
     if (email && password) {
         // this variable will respond to the response from the server and will be used to send the response to the client.
-        const response = await fetch('api/session/login', { // fetch the users with the email and password provided to login
+        const response = await fetch('/api/session/login', { // fetch the users with the email and password provided to login
             // the method is POST request
             method: 'POST',
             // body is the data we want to send to the server
