@@ -4,10 +4,29 @@ const { Users, Candies, CandyBox, Subscription } = require('../models');
 const withAuth = require('../utils/auth');
 
 
+
 //  GET home page
 router.get('/', withAuth, (req, res) => { 
-    // home.handlebars file
-    res.render('dashboard', {loggedIn: true });
+    Users.findAll({
+    where: {
+        id: req.session.users_id
+    },
+    attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
+    include: [
+        {
+            model: CandyBox,
+            attributes: ['id', 'decade', 'price', 'stock',],
+        }
+    ],
+    })
+    .then(dbUserData => {
+        const users = dbUserData.map(user => user.get({ plain: true}));
+    res.render('dashboard', { users, loggedIn: true });
+})
+.catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 //    // ability to logout 
@@ -46,12 +65,22 @@ router.get('/edit/:id', withAuth, (req, res) => {
     Users.findOne({
         // find the candy for the user by id
         where: {
-            // the id is in the user
             id: req.params.id
-        }
+        },
+        // include the candy model
+        include: [
+            {
+                model: CandyBox,
+                attributes: ['id', 'decade', 'price', 'stock',],
+            }
+        ]
     })
     // send the response back to the client
     .then(dbUserData => { 
+        if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+        }
         const users = dbUserData.get({ plain: true });
         res.render('edit-profile', { users, loggedIn: true });
     })
