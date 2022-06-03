@@ -84,7 +84,6 @@ h6 {
     border-radius: 2%;
 }
 
-
 .signup-hero {
     background-color: yellow;
     margin-bottom: 10%;
@@ -138,7 +137,6 @@ h6 {
     background-color: #ef7373;
 }
 
-
 #text-responsive {
     font-size: calc(10% + 1vw + 1vh);
   }
@@ -147,6 +145,13 @@ h6 {
     width: 100%;
     height: 100%;
     border-radius: 8%;
+  }
+
+  .dashboard-hero {
+    background-color: #d66238;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 2%;
   }
 
 /* .button-no-style {
