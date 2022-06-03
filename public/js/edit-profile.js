@@ -22,7 +22,6 @@ async function editFormHandler(event) {
             first_name,
             last_name,
             email,
-            password,
             address,
             city,
             state,

@@ -10,10 +10,10 @@
                         <div class="input-group">
                             <input type="email" class="form-control" id="edit-email" value="{{users.email}}" required>
                             <span class="input-group-text" id="basic-addon2">@gmail.com</span>
-                            <div class="valid-feedback">
+                            <div class="valid-feedback text-info">
                                 Email looks good!
                             </div>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-warning">
                                 Email is required!
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                                 name</span>
                             <input type="name" class="form-control" id="edit-first-name" value="{{users.first_name}}" required>
                             <input type="name" class="form-control" id="edit-last-name" value="{{users.last_name}}" required>
-                            <div class="invalid-feedback">
+                            <div class="invalid-feedback text-warning">
                                 First and last name is required
                             </div>
                         </div>
@@ -35,10 +35,10 @@
                     <div class="col-md-12">
                         <label for="edit-address" class="form-label">Address:</label>
                         <input type="address" class="form-control" id="edit-address" value="{{users.address}}" required>
-                        <div class="valid-feedback">
+                        <div class="valid-feedback text-info">
                             Address looks good!
                         </div>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text-warning">
                             Addres is required!
                         </div>
                     </div>
@@ -46,10 +46,10 @@
                     <div class="col-md-6">
                         <label for="edit-city" class="form-label">City:</label>
                         <input type="city" class="form-control" id="edit-city" value="{{users.city}}" required>
-                        <div class="valid-feedback">
+                        <div class="valid-feedback text-info">
                             City looks good!
                         </div>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text-warning">
                             City is required!
                         </div>
                     </div>
@@ -60,10 +60,10 @@
                            <div id="state-helper" class="form-text ">
                             Input your state's abbreviation (ex. CA)
                         </div>
-                        <div class="valid-feedback">
+                        <div class="valid-feedback text-info">
                             State looks good!
                         </div>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text-warning">
                             State is required!
                         </div>
                     </div>
@@ -71,10 +71,10 @@
                     <div class="col-md-2">
                         <label for="edit-zipCode" class="form-label">ZipCode:</label>
                         <input type="zipcode" class="form-control" id="edit-zipCode" value="{{users.zipCode}}" required>
-                        <div class="valid-feedback">
+                        <div class="valid-feedback text-info">
                             ZipCode looks good!
                         </div>
-                        <div class="invalid-feedback">
+                        <div class="invalid-feedback text-warning">
                             ZipCode is required!
                         </div>
                     </div>
@@ -86,7 +86,9 @@
             </div>
         </div>
     </div>
-
+    
+    <script src="/js/edit-profile.js"></script>
+    <script src="/js/editprofile-validate.js"></script>
 
             {{!-- <form class="row g-3">
                 <div class="col-md-6 pt-3">
@@ -131,9 +133,3 @@
             </form>
 
         </div> --}}
-    </div>
-</div>
-
-
-
-<script src="/js/edit-profile.js"></script>
