@@ -46,7 +46,12 @@ li {
 
 
 .hero {
-    background-color: salmon;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/website-hero-background.png");
+    /* background-color: salmon; */
     margin-bottom: 25%;
 }
 
@@ -70,8 +75,21 @@ li {
 }
 
 .theme-container {
+    /* background-attachment: fixed;   */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/website-theme-container-background.png");
     margin-top: 25%;
     margin-bottom: 10%;
+}
+
+
+.content-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/container-background.png");
 }
 
 
