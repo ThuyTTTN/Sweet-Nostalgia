@@ -124,4 +124,28 @@ router.get('/password/', withAuth, (req, res) => {
         });
 });
 
+router.get('/subscriptions', withAuth, (req, res) => {
+    // access the candyBox model to find a subscription
+    Subscription.findOne({
+            // find the subscription for the user by id
+            where: {
+                id: req.session.id
+            },
+    })
+    // send the response back to the client
+    .then(dbSubscriptionData => {
+        if (!dbSubscriptionData) {
+            res.status(404).json({ message: 'No subscription found with this id'});
+            return;
+        }
+        const subscription = dbSubscriptionData.get({ plain: true});
+        res.render('subscriptions', { subscription, loggedIn: true });
+    })
+    // catch any errors
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+})
+
 module.exports = router;
