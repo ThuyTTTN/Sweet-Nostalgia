@@ -124,9 +124,9 @@ router.get('/password/', withAuth, (req, res) => {
         });
 });
 
-router.get('/subscription', withAuth, (req, res) => {
+router.get('/sub', withAuth, (req, res) => {
     // access the candyBox model to find a subscription
-    Subscription.findOne({
+    Users.findAll({
             // find the subscription for the user by id
             where: {
                 id: req.session.id
@@ -138,8 +138,8 @@ router.get('/subscription', withAuth, (req, res) => {
             res.status(404).json({ message: 'No subscription found with this id'});
             return;
         }
-        const subscription = dbSubscriptionData.get({ plain: true});
-        res.render('subscriptions', { subscription, loggedIn: true });
+        const user = dbSubscriptionData.map(user => user.get({ plain: true}));
+        res.render('sub', { user, loggedIn: true })
     })
     // catch any errors
     .catch(err => {
