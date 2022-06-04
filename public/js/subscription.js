@@ -1,19 +1,15 @@
-
-
 async function subscriptionFormHandler(event) {
     event.preventDefault();
 
-
-    const candybox_id_1 = document.querySelector('#candybox_id_1').value.trim();
-    const candybox_id_2 = document.querySelector('#candybox_id_2').value.trim();
-    const candybox_id_3 = document.querySelector('#candybox_id_3').value.trim();
+        const btn70s = document.getElementById('btn70s').value
+        const btn80s = document.getElementById('btn80s').value
+        const btn90s = document.getElementById('btn90s').value
+    
     
         const response = await fetch('/api/users/', {
             method: 'put',
             body: JSON.stringify({
-                candybox_id_1,
-                candybox_id_2,
-                candybox_id_3
+                candybox_id
             }),
             headers: { 'Content-Type': 'application/json' }
         })
@@ -23,8 +19,13 @@ async function subscriptionFormHandler(event) {
         } else {
             alert('Faliure to subscribe :(');
         }
+
+        btn70s.addEventListener('click', subscriptionFormHandler);
+        btn80s.addEventListener('click', subscriptionFormHandler);
+        btn90s.addEventListener('click', subscriptionFormHandler);
 }
 
 
-document.querySelector('.subscription-form').addEventListener('submit', subscriptionFormHandler);
+
+// document.querySelector('.subscription-form').addEventListener('submit', subscriptionFormHandler);
 
