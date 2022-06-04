@@ -4,9 +4,8 @@ async function subscriptionFormHandler(event) {
     event.preventDefault();
 
 
-    const candybox_id = document.querySelector('#candybox-input-subscription').value.trim();
-
-    if (candybox_id) {
+    const candybox_id = document.querySelector('#sub-input').value.trim();
+    
         const response = await fetch('/api/users/', {
             method: 'put',
             body: JSON.stringify({
@@ -20,7 +19,6 @@ async function subscriptionFormHandler(event) {
         } else {
             alert('Faliure to subscribe :(');
         }
-    }
 }
 
 document.querySelector('.subscription-form').addEventListener('submit', subscriptionFormHandler);
