@@ -6,13 +6,27 @@ root {
 }
 
 body {
-    background-color: #1f206c;
+    /* background-color: #1f206c; */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/website-body-background.png");
+    font-family: 'Kurale', serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+nav   {
+    /* background-attachment: fixed;   */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/header-background.png");
 }
 
 a   {
