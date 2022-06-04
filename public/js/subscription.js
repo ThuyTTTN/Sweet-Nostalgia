@@ -1,8 +1,6 @@
 async function subscriptionFormHandler(event) {
     event.preventDefault();
 
-        // const candybox_id = parseInt(document.querySelectorAll('input=namecandybox').value)
-
         const candybox_id = document.querySelector('input[name="candybox"]:checked').value;
         
         const response = await fetch('/api/sub/', {
@@ -14,9 +12,7 @@ async function subscriptionFormHandler(event) {
         })
 
         if (response.ok) {
-            // document.location.replace('/dashboard');
-            console.log(candybox_id);
-            console.log(response);
+            document.location.replace('/dashboard');
         } else {
             alert('Faliure to subscribe :(');
         }
