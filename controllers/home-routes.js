@@ -35,4 +35,11 @@ router.get('/themes', (req,res)=>{
   res.render('themes',{loggedIn : req.session.loggedIn})
 })
 
+//  GET subscription page
+router.get('/subscription', (req, res) => { // anyone can access this page
+  //  home.handlebars file
+  // {loggedIn: req.session.loggedIn} might need this
+  res.render('subscription', );
+});
+
 module.exports = router;
