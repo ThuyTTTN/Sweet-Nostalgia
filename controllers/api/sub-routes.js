@@ -56,26 +56,26 @@ router.post('/', (req, res) => {
 
 
 
-// // PUT update subscription
-// router.put('/:id', (req, res) => {
-//     // update a subscription's name by its `id` value
-//     Subscription.update(req.body, {
-//         where: {
-//             id: req.params.id
-//         }
-//     })
-//         .then(dbSubscriptionData => {
-//             if (!dbSubscriptionData) {
-//                 res.status(404).json({ message: 'No subscription found with this id' });
-//                 return;
-//             }
-//             res.json(dbSubscriptionData);
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+// PUT update subscription
+router.put('/:id', (req, res) => {
+    // update a subscription's name by its `id` value
+    Subscription.update(req.body, {
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbSubscriptionData => {
+            if (!dbSubscriptionData) {
+                res.status(404).json({ message: 'No subscription found with this id' });
+                return;
+            }
+            res.json(dbSubscriptionData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // // PUT update subscription
 // router.put('/', withAuth, (req, res) => {
