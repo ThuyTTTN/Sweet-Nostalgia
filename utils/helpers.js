@@ -7,5 +7,10 @@ module.exports = {
     .replace('www.', '') // remove www.
     .split('/')[0] // get the first part of the url
     .split('?')[0]; // get the first part of the url after the ?
-}
+},
+  active_sub: (activesub, value) => {
+    console.log(activesub);
+    console.log(value)
+    return  activesub === value
+  }
 };

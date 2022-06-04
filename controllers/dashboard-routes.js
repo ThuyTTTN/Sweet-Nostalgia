@@ -72,11 +72,13 @@ router.get('/edit/', withAuth, (req, res) => {
                 id: req.session.users
             },
             attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
-            // include the candy model
-            include: [{
-                model: CandyBox,
-                attributes: ['id', 'decade', 'price', 'stock', ],
-            }]
+            // include candy model and inside candy model include subscription model
+            include: [
+                {
+                    model: CandyBox,
+                    attributes: ['id', 'decade', 'price', 'stock',],
+                }
+            ], 
         })
         // send the response back to the client
         .then(dbUserData => {
@@ -85,7 +87,9 @@ router.get('/edit/', withAuth, (req, res) => {
                 return;
             }
             const users = dbUserData.get({ plain: true});
+            console.log(users)
             res.render('editprofile', { users, loggedIn: true });
+            
         })
         // catch any errors
         .catch(err => {
@@ -126,17 +130,18 @@ router.get('/password/', withAuth, (req, res) => {
 
 router.get('/sub', withAuth, (req, res) => {
     // access the candyBox model to find a subscription
-    Users.findAll({
+    Users.findOne({
             // find the subscription for the user by id
             where: {
-                id: req.session.id
+                id: req.session.users
             },
             attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
-            // include the subscription model
-            include: [{
-                model: CandyBox,
-                attributes: ['id', 'decade', 'price', 'stock', ],
-            }]
+            include: [
+                {
+                    model: CandyBox,
+                    attributes: ['id', 'decade', 'price', 'stock',],
+                }
+            ], 
     })
     // send the response back to the client
     .then(dbSubscriptionData => {
@@ -144,8 +149,10 @@ router.get('/sub', withAuth, (req, res) => {
             res.status(404).json({ message: 'No subscription found with this id'});
             return;
         }
-        const user = dbSubscriptionData.map(user => user.get({ plain: true}));
-        res.render('sub', { user, loggedIn: true })
+        // const users = dbSubscriptionData.map(user => user.get({ plain: true}));
+        const users = dbSubscriptionData.get({ plain: true});
+        console.log(users);
+        res.render('sub', { users, loggedIn: true })
     })
     // catch any errors
     .catch(err => {

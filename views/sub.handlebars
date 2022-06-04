@@ -1,4 +1,9 @@
 {{!-- container to hold subscription option --}}
+
+
+<div>
+    <h1 class="text-white">{{users.first_name}}</h1></div>
+
 <div class="subscription-hero">
     <form class="subscription-form">
         <div class="container">
@@ -8,21 +13,21 @@
 
 
 <div class="form-check">
-  <input class="form-check-input candybox_id" type="radio" name="candybox" value="1"  {{#if users.candybox_id === 1 }}checked {{/if}}>
+  <input class="form-check-input candybox_id" type="radio" name="candybox" value="1"  {{#if (active_sub users.candyboxes.0.id 1) }}checked{{/if}}>
   <label class="form-check-label" for="flexRadioDefault1">
     70s
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input candybox_id" type="radio" name="candybox"  value="2" {{#if users.candybox_id === 2 }}checked {{/if}}>
+  <input class="form-check-input candybox_id" type="radio" name="candybox"  value="2" {{#if (active_sub users.candyboxes.0.id 2) }}checked {{/if}}>
   <label class="form-check-label" for="flexRadioDefault2">
     80s
   </label>
 </div>
 
 <div class="form-check">
-  <input class="form-check-input candybox_id" type="radio" name="candybox"  value="3"  {{#if users.candybox_id === 3 }}checked {{/if}}>
+  <input class="form-check-input candybox_id" type="radio" name="candybox"  value="3"   {{#if (active_sub users.candyboxes.0.id 3) }}checked {{/if}}>
   <label class="form-check-label" for="flexRadioDefault3">
     90s
   </label>
