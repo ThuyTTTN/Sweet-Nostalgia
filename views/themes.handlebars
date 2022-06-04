@@ -24,10 +24,17 @@
                     <li class="list-group-item flex-fill list-group-item-info">BuckEyes</li>
           </ul>
         </div>
+        {{#if loggedIn}}
         <div class="col-12 pt-3 pb-3">
-          <a class="btn btn-primary btn-lg btn-block" href="/subscription" role="button" id="text-responsive">Get Sweet
+          <a class="btn btn-primary btn-lg btn-block" href="/dashboard" role="button" id="text-responsive">Get Sweet
             70s Now!</a>
         </div>
+        {{else}}
+        <div class="col-12 pt-3 pb-3">
+          <a class="btn btn-primary btn-lg btn-block" href="/signup" role="button" id="text-responsive">Get Sweet
+            70s Now!</a>
+        </div>
+        {{/if}}
       </div>
     </div>
   </div>
@@ -53,14 +60,21 @@
                   <div class="list-group-item flex-fill list-group-item-warning">Skor</li>
                     <li class="list-group-item flex-fill list-group-item-info">Cow Tales</li>
           </ul>
-        </div>
+        {{#if loggedIn}}
         <div class="col-12 pt-3 pb-3">
-          <a class="btn btn-primary btn-lg btn-block" href="/subscription" role="button" id="text-responsive">Get Sweet
+          <a class="btn btn-primary btn-lg btn-block" href="/dashboard" role="button" id="text-responsive">Get Sweet
             80s Now!</a>
         </div>
+        {{else}}
+        <div class="col-12 pt-3 pb-3">
+          <a class="btn btn-primary btn-lg btn-block" href="/signup" role="button" id="text-responsive">Get Sweet
+            80s Now!</a>
+        </div>
+        {{/if}}
       </div>
     </div>
   </div>
+</div>
 </div>
 
 
@@ -85,10 +99,17 @@
                     <li class="list-group-item flex-fill list-group-item-info">Nerd Ropes</li>
           </ul>
         </div>
+        {{#if loggedIn}}
         <div class="col-12 pt-3 pb-3">
-          <a class="btn btn-primary btn-lg btn-block" href="/subscription" role="button" id="text-responsive">Get Sweet
-            80s Now!</a>
+          <a class="btn btn-primary btn-lg btn-block" href="/dashboard" role="button" id="text-responsive">Get Sweet
+            90s Now!</a>
         </div>
+        {{else}}
+        <div class="col-12 pt-3 pb-3">
+          <a class="btn btn-primary btn-lg btn-block" href="/signup" role="button" id="text-responsive">Get Sweet
+            90s Now!</a>
+        </div>
+        {{/if}}
       </div>
     </div>
   </div>
