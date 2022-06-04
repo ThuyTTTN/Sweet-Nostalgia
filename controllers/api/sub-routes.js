@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { CandyBox, Candies, Users, Subscription } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 // GET all subscriptions
@@ -65,6 +66,29 @@ router.put('/:id', (req, res) => {
     })
         .then(dbSubscriptionData => {
             if (!dbSubscriptionData) {
+                res.status(404).json({ message: 'No subscription found with this id' });
+                return;
+            }
+            res.json(dbSubscriptionData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// PUT update subscription
+router.put('/', withAuth, (req, res) => {
+    // update a subscription's name by its `id` value
+    Subscription.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.session.id,
+            candybox_id: req.body.candybox_id
+        }
+    })
+        .then(dbSubscriptionData => {
+            if (!dbSubscriptionData[0]) {
                 res.status(404).json({ message: 'No subscription found with this id' });
                 return;
             }

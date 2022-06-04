@@ -131,6 +131,12 @@ router.get('/sub', withAuth, (req, res) => {
             where: {
                 id: req.session.id
             },
+            attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
+            // include the subscription model
+            include: [{
+                model: CandyBox,
+                attributes: ['id', 'decade', 'price', 'stock', ],
+            }]
     })
     // send the response back to the client
     .then(dbSubscriptionData => {
