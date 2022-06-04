@@ -56,39 +56,16 @@ router.post('/', (req, res) => {
 
 
 
-// PUT update subscription
-router.put('/:id', (req, res) => {
-    // update a subscription's name by its `id` value
-    Subscription.update(req.body, {
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(dbSubscriptionData => {
-            if (!dbSubscriptionData) {
-                res.status(404).json({ message: 'No subscription found with this id' });
-                return;
-            }
-            res.json(dbSubscriptionData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
 // // PUT update subscription
-// router.put('/', withAuth, (req, res) => {
+// router.put('/:id', (req, res) => {
 //     // update a subscription's name by its `id` value
-//     Subscription.findOne(req.body, {
-//         individualHooks: true,
+//     Subscription.update(req.body, {
 //         where: {
-//             id: req.session.id,
-//             candybox_id: req.body.candybox_id
+//             id: req.params.id
 //         }
 //     })
 //         .then(dbSubscriptionData => {
-//             if (!dbSubscriptionData[0]) {
+//             if (!dbSubscriptionData) {
 //                 res.status(404).json({ message: 'No subscription found with this id' });
 //                 return;
 //             }
@@ -99,6 +76,28 @@ router.put('/:id', (req, res) => {
 //             res.status(500).json(err);
 //         });
 // });
+
+// PUT update subscription
+router.put('/', withAuth, (req, res) => {
+    // update a subscription's name by its `id` value
+    Subscription.update(req.body, {
+        individualHooks: true,
+        where: {
+            id: req.session.id,
+        }
+    })
+        .then(dbSubscriptionData => {
+            if (!dbSubscriptionData[0]) {
+                res.status(404).json({ message: 'No subscription found with this id' });
+                return;
+            }
+            res.json(dbSubscriptionData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 
 // DELETE subscription by id

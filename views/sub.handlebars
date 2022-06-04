@@ -1,59 +1,63 @@
 {{!-- container to hold subscription option --}}
 <div class="subscription-hero">
     <form class="subscription-form">
-    <div class="container">
-        <div class="row">
-            
-            <div class="col-md-4 pt-2 pb-2">
-                <button type="button" class="btn btn-outline-info btn-lg btn-block text-dark">
-                    <div class="subscription-card">
-                        <div class="subscription-card-header">
-                            <h3>70s Candy Box</h3>
-                        </div>
-                        <div class="subscription-card-body">
-                            <img src="/images/trending_1.jpg" alt="70s Candy Box" class="subscription-card-image">
-                        </div>
-                        <div class="subscription-card-footer">
-                            <p>$9.99 per month</p>
-                </button>
-            </div>
+        <div class="container">
+            <div class="row">
 
-               <div class="col-md-4 pt-2 pb-2">
-                <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark">
-                    <div class="subscription-card">
-                        <div class="subscription-card-header">
-                            <h3>80s Candy Box</h3>
-                        </div>
-                        <div class="subscription-card-body">
-                            <img src="/images/trending_1.jpg" alt="70s Candy Box" class="subscription-card-image">
-                        </div>
-                        <div class="subscription-card-footer">
-                            <p>$9.99 per month</p>
-                </button>
-            </div>
-
-               <div class="col-md-4 pt-2 pb-2">
-                <button type="button" class="btn btn-outline-danger btn-lg btn-block text-dark">
-                    <div class="subscription-card">
-                        <div class="subscription-card-header">
-                            <h3>90s Candy Box</h3>
-                        </div>
-                        <div class="subscription-card-body">
-                            <img src="/images/trending_1.jpg" alt="70s Candy Box" class="subscription-card-image">
-                        </div>
-                        <div class="subscription-card-footer">
-                            <p>$9.99 per month</p>
-                </button>
-            </div>
-
-            <div class="col-12">
-                <div class="text-center pt-3">
-                    {{!-- button to subscribe --}}
-                    <a class="btn btn-danger mb-2" href="/dashboard" role="button">Update Subscription</a>
+                <div class="col-md-4 pt-2 pb-2">
+                    <button type="button" class="btn btn-outline-info btn-lg btn-block text-dark" id="candybox_id"
+                        value="1">
+                        <div class="subscription-card">
+                            <div class="subscription-card-header">
+                                <h3>70s Candy Box</h3>
+                            </div>
+                            <div class="subscription-card-body">
+                                <img src="/images/trending_1.jpg" alt="70s Candy Box" class="subscription-card-image">
+                            </div>
+                            <div class="subscription-card-footer">
+                                <p>$9.99 per month</p>
+                    </button>
                 </div>
-            </div>
 
+                <div class="col-md-4 pt-2 pb-2">
+                    <button type="button" class="btn btn-outline-warning btn-lg btn-block text-dark" id="candybox_id"
+                        value="2">
+                        {{!-- <input type="hidden" id="candybox_id" value="2" /> --}}
+                        <div class="subscription-card">
+                            <div class="subscription-card-header">
+                                <h3>80s Candy Box</h3>
+                            </div>
+                            <div class="subscription-card-body">
+                                <img src="/images/trending_1.jpg" alt="70s Candy Box" class="subscription-card-image">
+                            </div>
+                            <div class="subscription-card-footer">
+                                <p>$9.99 per month</p>
+                    </button>
+                </div>
+
+                <div class="col-md-4 pt-2 pb-2">
+                    <button type="button" class="btn btn-outline-danger btn-lg btn-block text-dark" id="candybox_id"
+                        value="3">
+                        <div class="subscription-card">
+                            <div class="subscription-card-header">
+                                <h3>90s Candy Box</h3>
+                            </div>
+                            <div class="subscription-card-body">
+                                <img src="/images/trending_1.jpg" alt="70s Candy Box" class="subscription-card-image">
+                            </div>
+                            <div class="subscription-card-footer">
+                                <p>$9.99 per month</p>
+                    </button>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-info" type="submit">Save Changes</button>
+                </div>
+
+
+            </div>
         </div>
-    </div>
     </form>
 </div>
+
+<script src="/js/subscription.js"></script>
