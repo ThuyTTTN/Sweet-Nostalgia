@@ -28,7 +28,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-router.get('/edit/', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     // access the candel model to find a single candy
     Users.findOne({
             // find the candy for the user by id
@@ -61,7 +61,7 @@ router.get('/edit/', withAuth, (req, res) => {
         });
 });
 
-router.get('/password/', withAuth, (req, res) => {
+router.get('/password/:id', withAuth, (req, res) => {
     // access the candel model to find a single candy
     Users.findOne({
             // find the candy for the user by id
@@ -91,7 +91,7 @@ router.get('/password/', withAuth, (req, res) => {
         });
 });
 
-router.get('/sub/', withAuth, (req, res) => {
+router.get('/sub/:id', withAuth, (req, res) => {
     // access the candyBox model to find a subscription
     Users.findOne({
             // find the subscription for the user by id

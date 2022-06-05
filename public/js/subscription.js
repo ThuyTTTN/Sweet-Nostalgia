@@ -3,10 +3,10 @@ async function subscriptionFormHandler(event) {
 
         const candybox_id = document.querySelector('input[name="candybox"]:checked').value;
              // variable for the id of the post using the url 
-    //   const id = window.location.toString().split('/')
-    //   [window.location.toString().split('/').length - 1];
+      const id = window.location.toString().split('/')
+      [window.location.toString().split('/').length - 1];
         
-        const response = await fetch(`/api/sub/`, {
+        const response = await fetch(`/api/sub/${id}`, {
             method: 'put',
             body: JSON.stringify({
                 candybox_id
