@@ -202,3 +202,11 @@ h6 {
     color: rgba(109, 6, 6, 0.373);
     opacity: 1; 
   }
+
+  #sign-ex {
+    background-color: rgba(109, 6, 6, 0.217);
+  }
+
+  #sign-ex-edit {
+    background-color: rgba(32, 12, 255, 0.28);
+  }
