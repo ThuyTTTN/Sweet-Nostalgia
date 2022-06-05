@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 
 
 // POST new subscription
-router.post('/', (req, res) => {
+router.post('/:id', (req, res) => {
     // create a new subscription
     Subscription.create({
         // req.body means passing everything from frontend
@@ -59,7 +59,7 @@ router.put('/:id', (req, res) => {
     // update a subscription's name by its `id` value
     Subscription.update(req.body, {
         where: {
-            id: req.params.id
+            users_id: req.session.users
         }
     })
         .then(dbSubscriptionData => {
@@ -75,28 +75,28 @@ router.put('/:id', (req, res) => {
         });
 });
 
-// PUT update subscription
-router.put('/', withAuth, (req, res) => {
-    // update a subscription's name by its `id` value
-    console.log(req.session.users)
-    Subscription.update(req.body, {
-        where: {
-            id: req.session.users
-        }
-    })
-        .then(dbSubscriptionData => {
+// // PUT update subscription
+// router.put('/', withAuth, (req, res) => {
+//     // update a subscription's name by its `id` value
+//     console.log(req.session.users)
+//     Subscription.update(req.body, {
+//         where: {
+//             id: req.session.users
+//         }
+//     })
+//         .then(dbSubscriptionData => {
             
-            if (!dbSubscriptionData[0]) {
-                res.status(404).json({ message: 'No subscription found with this id' });
-                return;
-            }
-            res.json(dbSubscriptionData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+//             if (!dbSubscriptionData[0]) {
+//                 res.status(404).json({ message: 'No subscription found with this id' });
+//                 return;
+//             }
+//             res.json(dbSubscriptionData);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 
 // DELETE subscription by id

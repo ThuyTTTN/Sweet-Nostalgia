@@ -4,7 +4,10 @@ async function signupSubFormHandler(event) {
 
         const candybox_id = document.querySelector('input[name="candybox"]:checked').value;
 
-        const response = await fetch('/api/sub/', {
+        const id = window.location.toString().split('/')
+        [window.location.toString().split('/').length - 1];
+
+        const response = await fetch(`/api/sub/${id}`, {
             method: 'post',
             body: JSON.stringify({
                 candybox_id,
