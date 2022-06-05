@@ -18,14 +18,9 @@
 ***
 ## Demo of Project 
 
-### 🏠 <a href="https://sweet-nostalgia.herokuapp.com/" target="_blank">Homepage</a>
+### 🏠 [Homepage](https://sweet-nostalgia.herokuapp.com/)
 
-### ✨ <a href="https://user-images.githubusercontent.com/99369106/172053913-f197f365-9488-417e-b74f-18d890afef9a.mp4" target="_blank">Live Developer Demo</a>
-
-
-
-
-
+### ✨ [Live Developer Demo](https://user-images.githubusercontent.com/99369106/172053913-f197f365-9488-417e-b74f-18d890afef9a.mp4)
 
 ***
 ## Install
