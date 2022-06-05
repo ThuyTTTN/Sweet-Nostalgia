@@ -110,7 +110,11 @@ h6 {
 }
 
 .login-hero {
-    background-color: #e8e8f8;
+    /* background-color: #e8e8f8; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/modal-background-login.png");
     margin-bottom: 10%;
     margin-top: 10%;
     border-radius: 2%;
@@ -118,7 +122,11 @@ h6 {
 
 
 .signup-hero {
-    background-color: yellow;
+    /* background-color: yellow; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/modal-background-signup.png");
     margin-bottom: 10%;
     margin-top: 10%;
     border-radius: 2%;
