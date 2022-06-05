@@ -43,7 +43,8 @@ router.post('/', withAuth, (req, res) => {
     Subscription.create({
         // req.body means passing everything from frontend
         ...req.body,
-        users_id: req.session.users
+        users_id: req.session.users,
+        candybox_id: req.body.candybox_id
     })
         .then((subscription) => {
             res.json(subscription);
