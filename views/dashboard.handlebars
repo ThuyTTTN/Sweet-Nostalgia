@@ -1,7 +1,7 @@
 <div class="dashboard-hero">
-  <h1 class="mb-5">Account Dashboard</h1>
+  <h1 class="mb-3">Account Dashboard For {{users.first_name}} {{users.last_name}} </h1>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 pb-3">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Manage Your Account</h5>
@@ -18,12 +18,12 @@
 
 {{!--  subscription ship date--}}
 <div class="dashboard-hero">
-  <h1 class="mb-5">Subscription</h1>
+  <h1 class="mb-3">Subscription</h1>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 pb-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Subscription {{users.email}}</h5>
+          <h5 class="card-title">{{users.first_name}} {{users.last_name}} current subscription is <span class="fw-bold text-decoration-underline text-info">{{users.candyboxes.0.decade}} Candy Box</span></h5>
           <p class="card-text">
             <a href="/dashboard/sub/{{users.id}}" class="btn btn-primary">Manage Subscriptions</a>
           </h5>

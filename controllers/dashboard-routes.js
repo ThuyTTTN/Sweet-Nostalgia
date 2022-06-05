@@ -5,9 +5,9 @@ const withAuth = require('../utils/auth');
 
 //  GET home page
 router.get('/', withAuth, (req, res) => {
-    Users.findAll({
+    Users.findOne({
             where: {
-                id: req.session.id
+                id: req.session.users
             },
             attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
             include: [
@@ -18,8 +18,9 @@ router.get('/', withAuth, (req, res) => {
             ], 
         })
         .then(dbUserData => {
-            const user = dbUserData.map(users => users.get({ plain: true }));
-            res.render('dashboard', { user, loggedIn: true});
+            const users = dbUserData.get({ plain: true});
+            console.log(users)
+            res.render('dashboard', { users, loggedIn: true});
         })
         .catch(err => {
             console.log(err);
@@ -27,7 +28,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-router.get('/edit/', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, (req, res) => {
     // access the candel model to find a single candy
     Users.findOne({
             // find the candy for the user by id
@@ -60,7 +61,7 @@ router.get('/edit/', withAuth, (req, res) => {
         });
 });
 
-router.get('/password/', withAuth, (req, res) => {
+router.get('/password/:id', withAuth, (req, res) => {
     // access the candel model to find a single candy
     Users.findOne({
             // find the candy for the user by id
