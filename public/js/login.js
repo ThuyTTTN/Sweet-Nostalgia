@@ -13,7 +13,7 @@ const loginFormHandles = async function (event) {
         // this variable will respond to the response from the server and will be used to send the response to the client.
         const response = await fetch('api/session/login', { // fetch the users with the email and password provided to login
             // the method is POST request
-            method: 'POST',
+            method: 'post',
             // body is the data we want to send to the server
             body: JSON.stringify({
                 // the email of the user

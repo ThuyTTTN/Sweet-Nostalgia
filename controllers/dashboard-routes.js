@@ -91,7 +91,7 @@ router.get('/password/:id', withAuth, (req, res) => {
         });
 });
 
-router.get('/sub', withAuth, (req, res) => {
+router.get('/sub/:id', withAuth, (req, res) => {
     // access the candyBox model to find a subscription
     Users.findOne({
             // find the subscription for the user by id
