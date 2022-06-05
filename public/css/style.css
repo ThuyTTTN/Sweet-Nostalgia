@@ -197,3 +197,8 @@ h6 {
   #sub-btn {
     background-color: #f543ec;
   }
+
+  .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(109, 6, 6, 0.373);
+    opacity: 1; 
+  }
