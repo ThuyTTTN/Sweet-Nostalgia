@@ -38,7 +38,7 @@ router.get('/:id', (req, res) => {
 
 
 // POST new subscription
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // create a new subscription
     Subscription.create({
         // req.body means passing everything from frontend
