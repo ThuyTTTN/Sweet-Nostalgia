@@ -1,18 +1,19 @@
-async function subscriptionFormHandler(event) {
+
+async function signupSubFormHandler(event) {
     event.preventDefault();
 
         const candybox_id = document.querySelector('input[name="candybox"]:checked').value;
-        
+
         const response = await fetch('/api/sub/', {
-            method: 'put',
+            method: 'post',
             body: JSON.stringify({
-                candybox_id
+                candybox_id,
             }),
             headers: { 'Content-Type': 'application/json' }
         })
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
         } else {
             alert('Faliure to subscribe :(');
         }
@@ -20,5 +21,5 @@ async function subscriptionFormHandler(event) {
 console.log('you made it to the subscriptionFormHandler');
 
 
-document.querySelector('.subscription-form').addEventListener('submit', subscriptionFormHandler);
+document.querySelector('.sign-sub-form').addEventListener('submit', signupSubFormHandler);
 

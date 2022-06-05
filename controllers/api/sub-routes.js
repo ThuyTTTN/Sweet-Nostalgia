@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { CandyBox, Candies, Users, Subscription } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 
 // GET all subscriptions
@@ -40,8 +41,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     // create a new subscription
     Subscription.create({
-        users_id: req.body.users_id,
-        candybox_id: req.body.candybox_id
+        // req.body means passing everything from frontend
+        ...req.body,
+        users_id: req.session.users
     })
         .then((subscription) => {
             res.json(subscription);
@@ -51,6 +53,29 @@ router.post('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+// // POST new subscription
+// router.post('/', withAuth, (req, res) => {
+//     // create a new subscription
+//     Subscription.create(req.body,{
+//         where: {
+//             id: req.session.users
+//         }
+//     })
+//     .then(dbSubscriptionData => {
+//         console.log(dbSubscriptionData)
+//         console.log(req.session.users)
+
+//         if (!dbSubscriptionData[0]) {
+//             res.status(404).json({ message: 'No subscription found with this id' });
+//             return;
+//         }
+//         res.json(dbSubscriptionData);
+//     }).catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 
 
@@ -65,6 +90,29 @@ router.put('/:id', (req, res) => {
     })
         .then(dbSubscriptionData => {
             if (!dbSubscriptionData) {
+                res.status(404).json({ message: 'No subscription found with this id' });
+                return;
+            }
+            res.json(dbSubscriptionData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+// PUT update subscription
+router.put('/', withAuth, (req, res) => {
+    // update a subscription's name by its `id` value
+    console.log(req.session.users)
+    Subscription.update(req.body, {
+        where: {
+            id: req.session.users
+        }
+    })
+        .then(dbSubscriptionData => {
+            
+            if (!dbSubscriptionData[0]) {
                 res.status(404).json({ message: 'No subscription found with this id' });
                 return;
             }
