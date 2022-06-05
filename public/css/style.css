@@ -6,13 +6,27 @@ root {
 }
 
 body {
-    background-color: #1f206c;
+    /* background-color: #1f206c; */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/website-body-background.png");
+    font-family: 'Kurale', serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+nav   {
+    /* background-attachment: fixed;   */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/header-background.png");
 }
 
 a   {
@@ -32,7 +46,12 @@ li {
 
 
 .hero {
-    background-color: salmon;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/website-hero-background.png");
+    /* background-color: salmon; */
     margin-bottom: 25%;
 }
 
@@ -42,12 +61,12 @@ li {
     border-radius: 8%;
 }
 
-.content-image {
+/* .content-image {
     margin: 10px;
     width: 60%;
     height: 20%;
     border-radius: 8%;
-}
+} */
 
 .theme-image {
     width: 50%;
@@ -56,8 +75,21 @@ li {
 }
 
 .theme-container {
+    /* background-attachment: fixed;   */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/website-theme-container-background.png");
     margin-top: 25%;
     margin-bottom: 10%;
+}
+
+
+.content-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/container-background.png");
 }
 
 
@@ -78,14 +110,22 @@ h6 {
 }
 
 .login-hero {
-    background-color: #e8e8f8;
+    /* background-color: #e8e8f8; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/modal-background-login.png");
     margin-bottom: 10%;
     margin-top: 10%;
     border-radius: 2%;
 }
 
 .signup-hero {
-    background-color: yellow;
+    /* background-color: yellow; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../images/modal-background-signup.png");
     margin-bottom: 10%;
     margin-top: 10%;
     border-radius: 2%;
