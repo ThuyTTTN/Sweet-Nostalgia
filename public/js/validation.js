@@ -1,5 +1,5 @@
 // a anonymous function is used to avoid global variables
-function  login() {
+function validate() {
     // we are 'use strict" to prevent any variables from leaking into the global scope
     // 'use strict'
     // we make a variable for the form using querySelector to select all forms with the class
@@ -21,4 +21,4 @@ function  login() {
           form.classList.add('was-validated')
         }, false) // we add the false to the end of the function to prevent the event from bubbling up the DOM tree
       })
-    }login() // we call the anonymous function to prevent any variables from leaking into the global scope
+    }validate() // we call the anonymous function to prevent any variables from leaking into the global scope

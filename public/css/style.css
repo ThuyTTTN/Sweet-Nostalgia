@@ -84,7 +84,6 @@ h6 {
     border-radius: 2%;
 }
 
-
 .signup-hero {
     background-color: yellow;
     margin-bottom: 10%;
@@ -113,6 +112,51 @@ h6 {
     height: 60%;
     border-radius: 8%;
 }
+
+.theme-hero-1,
+.theme-hero-2,
+.theme-hero-3 {
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 1%;
+}
+ 
+.theme-title-heading {
+    background-color: rgba(140, 34, 240, 0.559);
+}
+
+.theme-hero-1 {
+    background-color: #f9f641;
+}
+
+.theme-hero-2 {
+    background-color: #38d677;
+}
+
+.theme-hero-3 {
+    background-color: #b24b4b;
+}
+
+#text-responsive {
+    font-size: calc(10% + 1vw + 1vh);
+  }
+
+  #theme-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8%;
+  }
+
+  .dashboard-hero {
+    background-color: #f54343d1;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    border-radius: 2%;
+  }
+
+  #sub-btn {
+    background-color: #f543ec;
+  }
 
 /* .button-no-style {
     background: none;
