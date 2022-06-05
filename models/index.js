@@ -22,6 +22,8 @@ CandyBox.belongsToMany(Users, {
 Users.belongsToMany(CandyBox, {
   through: Subscription,
   foreignKey: 'users_id',
+  onUpdate: 'cascade',
+  onDelete: 'cascade'
 });
 
 module.exports = {

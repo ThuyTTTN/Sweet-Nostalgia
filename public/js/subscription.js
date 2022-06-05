@@ -19,7 +19,9 @@ async function subscriptionFormHandler(event) {
         } else {
             alert('Faliure to subscribe :(');
         }
+        console.log(response);
 }
+
 console.log('you made it to the subscriptionFormHandler');
 
 
