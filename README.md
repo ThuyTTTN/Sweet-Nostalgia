@@ -62,29 +62,29 @@ You can download <a href="https://insomnia.rest/download">Insomnia</a> to manipu
 ## Meet the Developers
 &nbsp;
 
-👤 **Brainybrian316**
+👤 **Brainybrian316** 🚀
 
-* Website: https://brainybrian316.com/
-* Github: [@Brainybrian316](https://github.com/Brainybrian316)
-* LinkedIn: [@brainybrian316](https://linkedin.com/in/brainybrian316)
+* [Developer Portfolio](https://brainybrian316.com/)
+* [GitHub Profile](https://github.com/Brainybrian316)
+* [LinkedIn Profile](https://linkedin.com/in/brainybrian316)
 
 👤 **onlydeniros**
 
-* Website: input your portfolio link here
-* Github: [@onlydeniros](https://github.com/onlydeniros)
-* LinkedIn: [@onlydeniros](input your link here)
+* [Developer Portfolio](https://onlydeniros.github.io/pro-portfolio/)
+* [GitHub Profile](https://github.com/onlydeniros)
+* [LinkedIn Profile](https://www.linkedin.com/in/deniro-dumas-7b57491ba/)
 
 👤 **ThuyTTTN**
 
-* Website: input your portfolio link here
-* Github: [@ThuyTTTN](https://github.com/ThuyTTTN)
-* LinkedIn: [@ThuyTTTN](input your link here)
+* [Developer Portfolio](https://thuytttn.github.io/Thuy-portfolio/)
+* [GitHub Profile](https://github.com/ThuyTTTN)
+* [LinkedIn Profile](www.linkedin.com/in/thuy-nguyen-a2333031)
 
 👤 **Vik-Maharaj**
 
-* Website: input your portfolio link here
-* Github: [@Vik-Maharaj](https://github.com/Vik-Maharaj)
-* LinkedIn: [@Vik-Maharaj](input your link here)
+* [Developer Portfolio](https://vik-maharaj.github.io/vik-maharaj-web-portfolio/)
+* [GitHub Profile](https://github.com/Vik-Maharaj)
+* [LinkedIn Profile](https://www.linkedin.com/in/vikaashmaharaj/)
 
 
 
