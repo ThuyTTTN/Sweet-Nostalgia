@@ -54,32 +54,6 @@ router.post('/', (req, res) => {
         });
 });
 
-// // POST new subscription
-// router.post('/', withAuth, (req, res) => {
-//     // create a new subscription
-//     Subscription.create(req.body,{
-//         where: {
-//             id: req.session.users
-//         }
-//     })
-//     .then(dbSubscriptionData => {
-//         console.log(dbSubscriptionData)
-//         console.log(req.session.users)
-
-//         if (!dbSubscriptionData[0]) {
-//             res.status(404).json({ message: 'No subscription found with this id' });
-//             return;
-//         }
-//         res.json(dbSubscriptionData);
-//     }).catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
-
-
-
-
 // PUT update subscription
 router.put('/:id', (req, res) => {
     // update a subscription's name by its `id` value

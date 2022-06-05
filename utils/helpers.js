@@ -9,8 +9,6 @@ module.exports = {
     .split('?')[0]; // get the first part of the url after the ?
 },
   active_sub: (activesub, value) => {
-    console.log(activesub);
-    console.log(value)
     return  activesub === value
   }
 };

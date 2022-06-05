@@ -3,8 +3,6 @@ const router = require('express').Router();
 const { Users, Candies, CandyBox, Subscription } = require('../models');
 const withAuth = require('../utils/auth');
 
-
-
 //  GET home page
 router.get('/', withAuth, (req, res) => {
     Users.findAll({
@@ -29,41 +27,6 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
-//    // ability to logout 
-//    router.post('/', (req, res) => {
-//     // if the user is logged in they have the ability to logout
-//     if (req.session.loggedIn) {
-//         res.render('dashboard')
-//     } else {
-//         // if the user is not logged in they cannot logout and will receive an error (the logout button will not show)
-//         res.render('login')
-//     }
-// });
-
-
-// //  GET /dashboard - to show user's subscription and information
-// router.get('/', withAuth, (req, res) => {
-//     User.findAll({
-//         // we are using the user id to find the user's subscription
-//         where: {
-//             id: req.session.id
-//         }
-//     })
-//     // send the response back to the client
-//     .then(dbUserData => { // render the dashboard.handlebars file
-//         res.render('dashboard', { loggedIn: req.session.loggedIn});
-//     })
-//     // catch any errors
-//     .catch (err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-
-// router.get('/edit', (req, res) => {
-//     res.render('editprofile');
-// })
-
 router.get('/edit/', withAuth, (req, res) => {
     // access the candel model to find a single candy
     Users.findOne({
@@ -87,7 +50,6 @@ router.get('/edit/', withAuth, (req, res) => {
                 return;
             }
             const users = dbUserData.get({ plain: true});
-            console.log(users)
             res.render('editprofile', { users, loggedIn: true });
             
         })
@@ -151,7 +113,6 @@ router.get('/sub', withAuth, (req, res) => {
         }
         // const users = dbSubscriptionData.map(user => user.get({ plain: true}));
         const users = dbSubscriptionData.get({ plain: true});
-        console.log(users);
         res.render('sub', { users, loggedIn: true })
     })
     // catch any errors

@@ -18,8 +18,6 @@ async function signupSubFormHandler(event) {
             alert('Faliure to subscribe :(');
         }
 }
-console.log('you made it to the subscriptionFormHandler');
-
 
 document.querySelector('.sign-sub-form').addEventListener('submit', signupSubFormHandler);
 

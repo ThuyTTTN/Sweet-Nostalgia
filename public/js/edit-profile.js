@@ -11,11 +11,6 @@ async function editFormHandler(event) {
     const state = document.querySelector('#edit-state').value;
     const zipCode = document.querySelector('#edit-zipCode').value;
 
-
-    // variable for teh id of the user using the url
-    // const id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-    // const id = session.users;
-
     const response = await fetch(`/api/users/`, {
         method: 'put',
         body: JSON.stringify({

@@ -111,6 +111,7 @@ router.put('/:id', (req, res) => {
 });
 
 //! ==============Routers that updates a user's data on the live site START ============== */
+
 router.put('/', withAuth, (req, res) => {
   // update a tag's name by its `id` value
   Users.update(req.body, {
@@ -154,8 +155,6 @@ router.put('/password', withAuth, (req, res) => {
 });
 
 //! ==============Routers that updates a user's data on the live site END ============== */
-
-
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value

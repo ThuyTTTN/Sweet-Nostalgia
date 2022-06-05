@@ -37,31 +37,6 @@ router.get('/themes', (req,res)=>{
   res.render('themes',{loggedIn : req.session.loggedIn})
 })
 
-// //  GET subscription page
-// router.get('/subscription', withAuth, (req, res) => {
-//   Users.findOne({
-//     // find the subscription for the user by id
-//     where: {
-//         id: req.session.users
-//     },
-//     attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
-//     include: [
-//         {
-//             model: CandyBox,
-//             attributes: ['id', 'decade', 'price', 'stock',],
-//         }
-//     ], 
-// })
-// .then(dbSubData => {
-//     const subscription = dbSubData.get({ plain: true});
-//     console.log(subscription);
-//     res.render('subscription', { subscription, loggedIn: req.session.loggedIn});
-//   })
-//   .catch(err => {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }); 
-// });
 
 router.get('/subscription', withAuth, (req, res) => {
   // access the candyBox model to find a subscription
@@ -71,12 +46,6 @@ router.get('/subscription', withAuth, (req, res) => {
               id: req.session.users
           },
           attributes: ['id', 'first_name', 'last_name', 'email', 'address', 'city', 'state', 'zipCode'],
-          // include: [
-          //     {
-          //         model: CandyBox,
-          //         attributes: ['id', 'decade', 'price', 'stock',],
-          //     }
-          // ], 
   })
   // send the response back to the client
   .then(dbSubscriptionData => {
@@ -84,9 +53,7 @@ router.get('/subscription', withAuth, (req, res) => {
           res.status(404).json({ message: 'No subscription found with this id'});
           return;
       }
-      // const users = dbSubscriptionData.map(user => user.get({ plain: true}));
       const users = dbSubscriptionData.get({ plain: true});
-      console.log(users);
       res.render('subscription', { users, loggedIn: true })
   })
   // catch any errors
