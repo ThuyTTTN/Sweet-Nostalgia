@@ -18,7 +18,7 @@
 ***
 ## Demo of Project 
 
-### 🏠 [Homepage](https://brainybrian316-blog-site.herokuapp.com/)
+### 🏠 [Homepage](https://sweet-nostalgia.herokuapp.com/)
 ### ✨ [Live Developer Demo]()
 
 ***
