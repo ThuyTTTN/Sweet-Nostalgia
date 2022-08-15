@@ -76,9 +76,9 @@ You can download <a href="https://insomnia.rest/download">Insomnia</a> to manipu
 
 👤 **ThuyTTTN**
 
-* [Developer Portfolio](https://thuytttn.github.io/Thuy-portfolio/)
+* [Developer Portfolio](https://thuytttn.github.io/react-portfolio/)
 * [GitHub Profile](https://github.com/ThuyTTTN)
-* [LinkedIn Profile](www.linkedin.com/in/thuy-nguyen-a2333031)
+* [LinkedIn Profile](https://www.linkedin.com/in/thuynguyen06)
 
 👤 **Vik-Maharaj**
 
